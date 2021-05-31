@@ -1,2 +1,2 @@
-# Junior Vállalalti Java backend fejlesztő gyakorlati feladatok
+# Junior Vállalati Java backend fejlesztő gyakorlati feladatok
 
