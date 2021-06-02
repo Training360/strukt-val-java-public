@@ -53,7 +53,7 @@ Az alkalmazást kétféleképp kell megvalósítani:
 * Az első az adatokat tárolja memóriában egy listában!
 * A második az adatokat tárolja adatbázisban!
 
-Az alkalmazás többrétegű legyen, legyen egy `MeetingRoomsController`, egy `MeetingRoomsService` és egy `MeetingRoomsRepository`. Az első kettő egy osztály legyen, míg a második egy interfész.
+Az alkalmazás többrétegű legyen, legyen egy `MeetingRoomsController`, egy `MeetingRoomsService` és egy `MeetingRoomsRepository`. Az első kettő egy osztály legyen, míg a harmadik egy interfész.
 Adatokat csak a controller kérjen be. 
 A repository-nak két implementációja van: `InMemoryMeetingRoomsRepository` és egy `MariaDbMeetingRoomsRepository`.
 
