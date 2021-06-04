@@ -4,7 +4,7 @@ Ide gyűjtjük a konzultációk rövid leírásait, hogy könnyebben visszakeres
 
 ## 2021.06.01.
 
-A konzultáción elhangzottak a konzultációval kapcsolatos tudnivalók, ezek megtalálhatóak a
+Elhangzottak a képzéssel kapcsolatos tudnivalók, ezek megtalálhatóak a
 [https://e-learning.training360.com/courses/take/training360-str-hgk-vallalati-backend-kepzes-kozpont/texts/24684824-mi-ez-a-tananyag](https://e-learning.training360.com/courses/take/training360-str-hgk-vallalati-backend-kepzes-kozpont/texts/24684824-mi-ez-a-tananyag)
 címen.
 
@@ -20,13 +20,11 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
 
 ## 2021.06.03.
 
-A konzultáción a következők történtek:
-
-- közös gyakorló teszt
+- Közös gyakorló teszt, kipróbáltuk az AhaSlides alkalmazást
 - István beszélt a Flyway használatáról: hogyan működik, hogyan használjuk éles alkalmazásban és hogyan teszteseteknél.
 - Kristóf válaszolt a Slack-en elhangzott kérdésekre:
     
-    * megbeszéltük a _polimorfizmus_ és a _dependency inversion_ fogalmát. 
+    * Megbeszéltük a _polimorfizmus_ és a _dependency inversion_ fogalmát. 
       (Emlékeztetőül: 
       **Polimorfizmus:** Többalakúság. Azt jelenti, hogy egy példányosított objektum több formában
       is megjelenhet, az objektumot többféle típusú változónak is értékül lehet adni. Az
@@ -39,8 +37,8 @@ A konzultáción a következők történtek:
       **Dependency inversion**-nek nevezzük azt, amikor egy osztály úgy használja egy másik osztály
       objektumát, hogy nem az osztályára hivatkozik, hanem az általa implementált interfészre.
       Azaz amikor nem egy osztályra mutat egy függőség, hanem annak egy interfészére. )
-    * a hétfői konzultáción kiadott meetingrooms projektfeladathoz kapcsolódóan: hogyan kérjük vissza minden második 
+    * A hétfői konzultáción kiadott meetingrooms projektfeladathoz kapcsolódóan: hogyan kérjük vissza minden második 
       elemet egy listából stream használatával, illetve hogyan tegyük meg ugyanezt adatbázisból?
-    * szintén a projektfeladattal kapcsolatosan: hogyan működik az abc-sorrendbe rendezés MariaDb-ben?
-    * volt egy kérdés a JDK beállításával kapcsolatosan.
-    * és megnéztük azt, hogy hogyan hozunk létre egy repo-n belül több projektet.
+    * Szintén a projektfeladattal kapcsolatosan: hogyan működik az abc-sorrendbe rendezés MariaDB-ben? Magyar helyesírás szabályai szerint az `a` betű nincs előrébb, mint az `á` betű.
+    * Hol kell beállítani a Java language levelt az IDEA-ban?
+    * Megnéztük azt, hogy hogyan hozunk létre egy repo-n belül több projektet.
