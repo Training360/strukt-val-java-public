@@ -42,3 +42,18 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
     * Szintén a projektfeladattal kapcsolatosan: hogyan működik az abc-sorrendbe rendezés MariaDB-ben? Magyar helyesírás szabályai szerint az `a` betű nincs előrébb, mint az `á` betű.
     * Hol kell beállítani a Java language levelt az IDEA-ban?
     * Megnéztük azt, hogy hogyan hozunk létre egy repo-n belül több projektet.
+
+## 2021.06.07.
+
+- A konzultáció elején technikai kérdéseket beszéltünk meg, az újonnan csatlakozott embereknek még nincsenek hozzáféréseik 
+  a legfontosabb dolgokhoz sem.
+- Többen kérték, hogy ha lehetséges, kerüljenek föl az egyes leckékhez a szöveges leírások.
+- Ezután általános ismétlés következett arról, hogy mit kell tudnia egy jól megírt unit tesztesetnek.
+- Arról is szó volt, hogy miért érdemes a fejlesztőnek unit teszteket írnia saját maga számára, miben 
+  könnyíti meg ezzel a saját munkáját.
+- Volt egy kérdés az anonim belső osztályokról.
+- Majd Kristóf hozott egy feladatot: hogyan mentsünk le adatbázisba egy olyan `Employee`-t, akinek van egy `Address`-listája? 
+  Opcionális házi feladat lesz ennek a megoldása a múlt héten kiadott `meetingrooms-solution`-projektben a következő módon: 
+  legyen minden `MeetingRoom`-nak egy-egy `Meeting`-eket tartalmazó listája, ezeket le kell menteni adatbázisba 
+  (JDBC-ben, tranzakciókezeléssel), majd ezeket az adatokat vissza is kell kérdezni az adatbázisból. Ez annak szól, akinek 
+  van rá plusz ideje, de természetesen elsősorban a heti kötelező tananyaggal kell foglalkozni.
