@@ -57,3 +57,23 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
   legyen minden `MeetingRoom`-nak egy-egy `Meeting`-eket tartalmazó listája, ezeket le kell menteni adatbázisba 
   (JDBC-ben, tranzakciókezeléssel), majd ezeket az adatokat vissza is kell kérdezni az adatbázisból. Ez annak szól, akinek 
   van rá plusz ideje, de természetesen elsősorban a heti kötelező tananyaggal kell foglalkozni.
+
+## 2021.06.08.
+
+- A konzultáció elején nagyon röviden technikai kérdéseket beszéltünk meg.
+- Kristóf hozott egy feladatot, és utána ezzel telt el a konzultáció teljes ideje. Közös kódolás volt, 
+  a streamek és a lambda kifejezések gyakorlására. 
+  Először Kristóf megosztott a GitHubon egy előkészített projektet, amit forkolni kellett és klónozni a saját gépre, 
+  majd ebben dolgozni. Több különböző metódust kellett implementálni streamek használatával. 
+  Opcionális házi feladatként is kaptunk még további feladatokat.
+- Kristóf gyakorló projektjének linkje: https://github.com/bkris21/streams-demo-public
+- A feladat szövege: 
+    * Órán megoldott feladatok:
+      Határozd meg a rendelések darabszámát egy paraméterként kapott státusz alapján!
+      Gyűjtsd össze azokat a rendeléseket, amelyekben van egy paraméterként kapott kategóriájú termék!
+      Gyűjtsd össze azokat a termékeket a rendelések közül, amelyeknek egy paraméteról kapott összegnél magasabb az áruk!
+    * További gyakorló feladatok:
+      Írj egy metódust ami paraméterként vár két dátumot, és adjuk vissza a két dátum közötti árbevételt, 
+      vagyis a két dátum közötti rendelések termékeinek az összértékét!
+      Keressünk meg egy terméket a neve alapján, amit paraméterként lehet megadni!
+      Adjuk vissza azt a rendelést, ami a legdrágább terméket tartalmazza. Ha több ilyen van bármelyiket!
