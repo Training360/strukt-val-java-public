@@ -77,3 +77,21 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
       vagyis a két dátum közötti rendelések termékeinek az összértékét!
       Keressünk meg egy terméket a neve alapján, amit paraméterként lehet megadni!
       Adjuk vissza azt a rendelést, ami a legdrágább terméket tartalmazza! Ha több ilyen van, bármelyiket.
+
+## 2021.06.09.
+
+- A konzultáció elején Kristóf tisztázta a Maven Surefire Plugin-nel kapcsolatos kérdéseket.
+- Utána röviden bemutatta, hogy mi annak a menete, ha többen dolgoznak egy projekten, amely a
+  GitHubon van tárolva. Hogyan történik a közös fejlesztés, pontosan milyen lépésekből áll.
+- Ezután a hallgatókat párba osztotta és adott egy feladatot, amin mindezt élesben is ki
+  lehetett próbálni. A feladat maga direkt nem volt nehéz, mert a lényeg most nem ez volt,
+  hanem az, hogy a közös munkát mindenki meg tudja tapasztalni.
+- A feladat szövege: Készítsd el a `Movie` osztályt a kövtkező
+  adattagokkal: + `name (String)` + `length (int)` + `releaseDate (LocalDate)`  
+  Legyen az osztályban egy konstruktor ami beállítja az adattagokat illetve a gettereket,
+  settereket. Készítsd el a `MovieService` osztályt melyben van egy filmeket tartalmazó
+  lista és ehhez egy `save(Movie movie)` metódus. Legyen még benne két metódus: + Keressük
+  meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
+- A konzultáció további része ezzel a feladattal és a közös fejlesztés során felmerült
+  problémák megoldásával telt.
+  
