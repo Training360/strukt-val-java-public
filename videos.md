@@ -65,16 +65,18 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
   `MeetingRoom`-ot, mentsük el a hozzá tartozó `Meeting`-eket is egy külön táblába, melyben külső kulccsal 
   hivatkozunk a `MeetingRoom`-ra. Próbáld meg visszaolvasni a táblák tartalmait egy listába!
 - Kristóf által adott SQL-utasítás a `Meeting`-ek táblájának létrehozására (értelemszerűen át kell írni):
-  
-  create table addresses (id bigint not null auto_increment,
-  city varchar(255),
-  street varchar(255),
-  house_number int,
-  emp_id bigint,
-  primary key (id),
-  CONSTRAINT `fk_address_emp`
-  foreign key(emp_id)
-  references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
+
+```sql  
+create table addresses (id bigint not null auto_increment,
+city varchar(255),
+street varchar(255),
+house_number int,
+emp_id bigint,
+primary key (id),
+CONSTRAINT `fk_address_emp`
+foreign key(emp_id)
+references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
+```
   
 ## 2021.06.08.
 
