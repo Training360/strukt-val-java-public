@@ -57,7 +57,25 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
   legyen minden `MeetingRoom`-nak egy-egy `Meeting`-eket tartalmazó listája, ezeket le kell menteni adatbázisba 
   (JDBC-ben, tranzakciókezeléssel), majd ezeket az adatokat vissza is kell kérdezni az adatbázisból. Ez annak szól, akinek 
   van rá plusz ideje, de természetesen elsősorban a heti kötelező tananyaggal kell foglalkozni.
-
+- A feladat pontos szövege:
+  Egészítsd ki a `MeetingRooms` alkalmazást!
+  Készíts egy `Meeting` nevű osztályt, melynek adattagjai tárolják a meetinget vezető ember nevét (String) és azt, 
+  hogy mettől meddig tart a meeting. A `MeetingRoom` osztálynak legyen egy `Meeting`-eket tartalmazó listája, getter, 
+  setter és egy `addMeeting()` metódusa. A `MariaDbMeetingRoomsRepository` osztályban, amikor elmentünk egy 
+  `MeetingRoom`-ot, mentsük el a hozzá tartozó `Meeting`-eket is egy külön táblába, melyben külső kulccsal 
+  hivatkozunk a `MeetingRoom`-ra. Próbáld meg visszaolvasni a táblák tartalmait egy listába!
+- Kristóf által adott SQL-utasítás a `Meeting`-ek táblájának létrehozására (értelemszerűen át kell írni):
+  
+  create table addresses (id bigint not null auto_increment,
+  city varchar(255),
+  street varchar(255),
+  house_number int,
+  emp_id bigint,
+  primary key (id),
+  CONSTRAINT `fk_address_emp`
+  foreign key(emp_id)
+  references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
+  
 ## 2021.06.08.
 
 - A konzultáció elején nagyon röviden technikai kérdéseket beszéltünk meg.
@@ -77,3 +95,21 @@ A következő projektet javasolt megcsinálni: [https://github.com/Training360/s
       vagyis a két dátum közötti rendelések termékeinek az összértékét!
       Keressünk meg egy terméket a neve alapján, amit paraméterként lehet megadni!
       Adjuk vissza azt a rendelést, ami a legdrágább terméket tartalmazza! Ha több ilyen van, bármelyiket.
+
+## 2021.06.09.
+
+- A konzultáció elején Kristóf tisztázta a Maven Surefire Plugin-nel kapcsolatos kérdéseket.
+- Utána röviden bemutatta, hogy mi annak a menete, ha többen dolgoznak egy projekten, amely a
+  GitHubon van tárolva. Hogyan történik a közös fejlesztés, pontosan milyen lépésekből áll.
+- Ezután a hallgatókat párba osztotta és adott egy feladatot, amin mindezt élesben is ki
+  lehetett próbálni. A feladat maga direkt nem volt nehéz, mert a lényeg most nem ez volt,
+  hanem az, hogy a közös munkát mindenki meg tudja tapasztalni.
+- A feladat szövege: Készítsd el a `Movie` osztályt a kövtkező
+  adattagokkal: + `name (String)` + `length (int)` + `releaseDate (LocalDate)`  
+  Legyen az osztályban egy konstruktor ami beállítja az adattagokat illetve a gettereket,
+  settereket. Készítsd el a `MovieService` osztályt melyben van egy filmeket tartalmazó
+  lista és ehhez egy `save(Movie movie)` metódus. Legyen még benne két metódus: + Keressük
+  meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
+- A konzultáció további része ezzel a feladattal és a közös fejlesztés során felmerült
+  problémák megoldásával telt.
+  
