@@ -114,4 +114,18 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
   meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
 - A konzultáció további része ezzel a feladattal és a közös fejlesztés során felmerült
   problémák megoldásával telt.
-  
+
+## 2021.06.11.
+
+- A konzultáció elején közös interaktív tesztet csináltunk meg,
+  utána közösen megbeszéltük a megoldásokat.
+- Sajnos mindannyian elfelejtettük, hogy felvételt kellene indítani, ezért
+  az első néhány kérdés részletesebb magyarázata lemaradt a videóról.
+- Ezután a hétfőn feladott opcionális házi feladat került sorra
+  (`MeetingRoom`-ok és a hozzájuk tartozó `Meeting`-ek listájának
+  lementése adatbázisba és ugyanennek a visszakérdezése). Kristóf részletesen
+  bemutatta ennek az egyszerűbb megoldási elvét az `employees` projektben
+  (két külön lekérdezéssel), majd megnéztünk egy másik megoldást
+  (`JOIN` parancs használatával, egy lekérdezéssel).
+- Következőnek részletesen megbeszéltük a kedden feladott opcionális házi
+  feladat (streamek az `OrderService` osztályban) megoldási lehetőségeit.
