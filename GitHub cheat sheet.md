@@ -35,3 +35,11 @@ Közös munka a GitHub-on. Új repo létrehozás
 - `fetch` (ezzel meg lehet nézni, mi változott, de nem írja felül a saját fájlokat)
 - `pull` (egyből behúzza a változásokat)
   `pull` előtt commitolj, különben a változásokat sem engedi lehúzni a gited!
+  
+Kiegészítés:
+
+- Ha a fejlesztőtárs letölti a GitHub repoból az anyagot és furcsán jelennek meg az osztályok a projekt 
+  struktúrában, akkor Maven/Reload All Maven Projects segíthet
+- Annak a dolga, aki becsatlakozik a fejlesztésbe: 
+  Sajátgépen létrehozni egy giten kívüli mappát.
+  Elfogadni a meghívót, majd a mappába belépve parancssorból git clone-nal lehúzni a repo tartalmát.
