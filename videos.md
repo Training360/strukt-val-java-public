@@ -129,3 +129,20 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
   (`JOIN` parancs használatával, egy lekérdezéssel).
 - Következőnek részletesen megbeszéltük a kedden feladott opcionális házi
   feladat (streamek az `OrderService` osztályban) megoldási lehetőségeit.
+
+## 2021.06.14.
+
+- A konzultáció elején megbeszéltük a másnapi csoportmunka technikai részleteit.
+- Ezután Kristóf elkezdte sorra megválaszolni a JUnit-tananyaghoz a múlt héten, 
+  Slack-en feltett kérdéseket. A következőkről esett szó részletesen:
+  
+    * Belső osztályok, statikus belső osztályok.
+    * Mikor lehet hasznos, hogy egy tesztesetet explicit módon elbuktasson az ember 
+      a `fail()` metódus használatával?
+    * Mikor lehet hasznos az assume használata?
+    * Metaannotáció létrehozása.
+    * A "Tesztesetek ismétlése" leckéhez tartozó gyakorlati feladat megfogalmazása 
+      nem szerencsés, hogyan értelmezhető jól?
+    * Paraméterezett tesztesetek használata.
+    * Mikor/miért ad vissza egy stream `Optional`-t?
+    * Tesztesetek futtatása Mavenből, verziószámok, stb. - egyéni problémák megbeszélése.
