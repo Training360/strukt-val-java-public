@@ -197,3 +197,15 @@ Megvalósítandó metódusok:
 Mindegyik osztályhoz legyen külön tesztosztály. A nem generált metódusokhoz legyen teszteset, lehetőleg több.
 A `GameService` osztály második metódusát paraméterezett teszttel végezd. Ez lehet akár dinamikus teszteset is.
 ```
+## 2021.06.16.
+
+- Kristóf a Slack-en feltett kérdéseket válaszolta meg:
+
+    * Miért AssertJ-t használunk inkább és nem Hamcrestet?
+    * A "tuple" fogalma és az AssertJ `extracting()` metódusának használata, jó részletesen.
+    * AssertJ soft assert kétféle létrehozása közötti különbség.
+    * Mockolás: színész - dublőr példával, szintén jó részletesen.
+    * `ArgumentCaptor` használata, röviden.
+ 
+- A konzultáció végén fakultatív beszélgetés folyt az előző napi csoportmunkában megoldott 
+  feladattal kapcsolatos tapasztalatokról, valamint GitHub és statikus factory metódusok témákban.
