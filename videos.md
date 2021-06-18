@@ -197,6 +197,7 @@ Megvalósítandó metódusok:
 Mindegyik osztályhoz legyen külön tesztosztály. A nem generált metódusokhoz legyen teszteset, lehetőleg több.
 A `GameService` osztály második metódusát paraméterezett teszttel végezd. Ez lehet akár dinamikus teszteset is.
 ```
+
 ## 2021.06.16.
 
 - Kristóf a Slack-en feltett kérdéseket válaszolta meg:
@@ -209,3 +210,24 @@ A `GameService` osztály második metódusát paraméterezett teszttel végezd. 
  
 - A konzultáció végén fakultatív beszélgetés folyt az előző napi csoportmunkában megoldott 
   feladattal kapcsolatos tapasztalatokról, valamint GitHub és statikus factory metódusok témákban.
+
+## 2021.06.18. délelőtti konzultáció
+
+- Kristóf a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (tesztelés), 
+  ismétlő kérdések formájában.
+
+## 2021.06.18. délutáni konzultáció
+
+- A konzultációt Medzihradszky Dénes vendég előadó tartotta. A bemutatkozás után a következő témákról 
+  beszélt az előadása során:
+    * Tesztelési alapelvek. 
+    * A tesztelés folyamata (a tervezéstől a lezárásig).
+    * Humán pszichológia és a tesztelés kapcsolata.
+    * Tesztelői és fejleszői gondolkodás különbözősége.
+    * A tesztelés szerepe és helye egy szoftver létrehozási folyamatában.
+    * Teszttípusok.
+    * A kód statikus elemzése, amelyet az IDE és a fordítóprogram végez.
+    * Teszttechnikák.
+    
+- Az előadás PDF anyaga elérhető.
+- Az oktató szívesen várja a kérdéseket a denes.medzihradszky@training360.com e-mail címen.
