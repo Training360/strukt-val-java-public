@@ -86,7 +86,7 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
   Először Kristóf megosztott a GitHubon egy előkészített projektet, amit forkolni kellett és klónozni a saját gépre, 
   majd ebben dolgozni. Több különböző metódust kellett implementálni streamek használatával. 
   Opcionális házi feladatként is kaptunk még további feladatokat.
-- Kristóf gyakorló projektjének linkje: https://github.com/bkris21/streams-demo-public
+- Kristóf gyakorló projektjének linkje: [https://github.com/bkris21/streams-demo-public](https://github.com/bkris21/streams-demo-public)
 - A feladat szövege: 
     * Órán megoldott feladatok:
       Határozd meg a rendelések darabszámát egy paraméterként kapott státusz alapján!
@@ -231,3 +231,30 @@ A `GameService` osztály második metódusát paraméterezett teszttel végezd. 
     
 - Az előadás PDF anyaga elérhető.
 - Az oktató szívesen várja a kérdéseket a denes.medzihradszky@training360.com e-mail címen.
+
+## 2021.06.21.
+
+- A konzultáció első 20 percében technikai problémákat beszéltünk meg. Ami fontos, hogy itt van bemutatva 
+  élőben az, hogy hogyan kellene létrehozni a tanfolyami gyakorlati feladatok megoldására szolgáló 
+  projektet, mert ez többeknek nem volt világos. István írta még a Slack-en korábban, hogy az elnevezések 
+  az utánkövethetőség és ellenőrizhetőség miatt a következők legyenek: "Kérem, hogy a teszt témakörhöz 
+  tartozó projekteket a `senior-solutions` repository-ban, a `locations-solution` mappába helyezzétek el. 
+  A Spring Bootos feladatokat pedig a `locations-spring-solution` mappában."
+- Ezután Kristóf röviden beszélt arról, hogy mit is jelent az hogy Spring, mi az, hogy keretrendszer.
+- Majd a _dependency injection_ fogalmát magyarázta meg, és elkezdte megmutatni az alapvető 
+  Springes annotációk működését.
+- Megbeszéltük, hogy a Spring egy **Inversion of Control (IoC)** keretrendszer, melynek lényege, 
+  hogy a komponenskezelést (pl. létrehozást, példányosítást, paraméterezést, megszüntetést, 
+  metódushívást) kiemeljük a programkódból, és egy külső keretrendszerre bízzuk (mint pl. a Spring), 
+  ő pedig átveszi az irányítást és megcsinálja ezeket helyettünk.
+- Valamint hogy a _dependency injection_ fogalma nem egyenlő a _dependency inversion_ fogalmával. Ez 
+  utóbbihoz Kristóf belinkelt egy cikket: [https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/](https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/)
+  Emlékeztetőül: 
+  
+    * **Dependency inversion**-nek nevezzük azt, amikor egy osztály úgy használja egy másik osztály
+      objektumát, hogy nem az osztályára hivatkozik, hanem az általa implementált interfészre.
+      Azaz amikor nem egy osztályra mutat a függőség, hanem annak egy interfészére. 
+    * A **dependency injection** pedig a függőség befecskendezése. Azt jelenti, hogy egy objektum más 
+      objektumok függőségeit elégíti ki, vagyis egy osztály referencia típusú attribútumának külső 
+      forrásból adunk értéket. Háromféle létezik belőle: attribútum injection, konstruktor injection 
+      és setter injection.
