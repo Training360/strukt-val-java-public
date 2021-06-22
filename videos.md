@@ -229,7 +229,8 @@ A `GameService` osztály második metódusát paraméterezett teszttel végezd. 
     * A kód statikus elemzése, amelyet az IDE és a fordítóprogram végez.
     * Teszttechnikák.
     
-- Az előadás PDF anyaga elérhető.
+- Az előadás PDF anyaga elérhető a [Tesztelésről fejlesztőknek](https://e-learning.training360.com/courses/take/training360-str-hgk-vallalati-backend-kepzes-kozpont/pdfs/25392021-tesztelesrol-fejlesztoknek) 
+  linken.
 - Az oktató szívesen várja a kérdéseket a denes.medzihradszky@training360.com e-mail címen.
 
 ## 2021.06.21.
@@ -247,14 +248,18 @@ A `GameService` osztály második metódusát paraméterezett teszttel végezd. 
   hogy a komponenskezelést (pl. létrehozást, példányosítást, paraméterezést, megszüntetést, 
   metódushívást) kiemeljük a programkódból, és egy külső keretrendszerre bízzuk (mint pl. a Spring), 
   ő pedig átveszi az irányítást és megcsinálja ezeket helyettünk.
-- Valamint hogy a _dependency injection_ fogalma nem egyenlő a _dependency inversion_ fogalmával. Ez 
-  utóbbihoz Kristóf belinkelt egy cikket: [https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/](https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/)
+- Valamint megbeszéltük azt is, hogy a _dependency injection_ fogalma nem egyenlő a _dependency inversion_ 
+  fogalmával. Ez utóbbihoz Kristóf belinkelt egy cikket: [A **S-O-L-I-D** alapelvek](https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/)
+  címmel.
   Emlékeztetőül: 
   
     * **Dependency inversion**-nek nevezzük azt, amikor egy osztály úgy használja egy másik osztály
       objektumát, hogy nem az osztályára hivatkozik, hanem az általa implementált interfészre.
       Azaz amikor nem egy osztályra mutat a függőség, hanem annak egy interfészére. 
-    * A **dependency injection** pedig a függőség befecskendezése. Azt jelenti, hogy egy objektum más 
-      objektumok függőségeit elégíti ki, vagyis egy osztály referencia típusú attribútumának külső 
-      forrásból adunk értéket. Háromféle létezik belőle: attribútum injection, konstruktor injection 
+    * A **dependency injection** pedig a függőség befecskendezése. Az osztály nem maga példányosítja 
+      a függőségeit (amik referencia típusú attribútumok), hanem csak definiálja azokat. Az attribútum 
+      külső forrásból kap értéket. Háromféle létezik belőle: attribútum injection, konstruktor injection 
       és setter injection.
+      
+- A konzultáció végén Kristóf érdekességként megmutatta még azt, hogyan lehet hozzáférni a Spring által 
+  példányosított Spring Bean objektumokhoz.
