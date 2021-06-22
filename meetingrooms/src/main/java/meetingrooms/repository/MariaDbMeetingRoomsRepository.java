@@ -86,12 +86,16 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
     private List<MeetingRoom> getMeetingRoomsFromResultSet(ResultSet rs) {
         List<MeetingRoom> meetingRooms = new ArrayList<>();
         try {
-            while (rs.next()) {
-                meetingRooms.add(new MeetingRoom(rs.getString("mr_name"), rs.getInt("mr_width"), rs.getInt("mr_length")));
-            }
+            addMeetingRooms(rs, meetingRooms);
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot get data.", sqle);
         }
         return meetingRooms;
+    }
+
+    private void addMeetingRooms(ResultSet rs, List<MeetingRoom> meetingRooms) throws SQLException {
+        while (rs.next()) {
+            meetingRooms.add(new MeetingRoom(rs.getString("mr_name"), rs.getInt("mr_width"), rs.getInt("mr_length")));
+        }
     }
 }
