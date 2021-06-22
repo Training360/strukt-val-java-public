@@ -58,10 +58,18 @@ public class InMemoryMeetingRoomsRepository implements MeetingRoomsRepository {
     }
 
     @Override
-    public void saveMeetingRoomAndMeetingsToo(MeetingRoom meetingRoom) {}
+    public void saveMeetingRoomAndMeetingsToo(MeetingRoom meetingRoom) {
+
+        // Ez a metódus csak azért van itt, hogy a kód leforduljon, de a megírása
+        // nem képezi a jelen feladat részét.
+    }
 
     @Override
     public List<MeetingRoom> loadMeetingRoomsWithMeetings() {
+
+        // Ez a metódus csak azért van itt, hogy a kód leforduljon, de a megírása
+        // nem képezi a jelen feladat részét.
+
         return new ArrayList<>();
     }
 }

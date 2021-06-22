@@ -12,13 +12,14 @@ import java.util.Scanner;
 
 public class MeetingRoomsController {
 
+    private static final List<String> AVAILABLE_MENU_NUMBERS = Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8");
     private Scanner scanner = new Scanner(System.in);
-    private MeetingRoomsService mrs = new MeetingRoomsService(new MariaDbMeetingRoomsRepository());
+    private MeetingRoomsService service = new MeetingRoomsService(new MariaDbMeetingRoomsRepository());
 
     public static void main(String[] args) {
-        MeetingRoomsController mrc = new MeetingRoomsController();
+        MeetingRoomsController controller = new MeetingRoomsController();
 
-        mrc.start();
+        controller.start();
     }
 
     private void start() {
@@ -47,8 +48,7 @@ public class MeetingRoomsController {
 
     private String getNumber() {
         String numberString = scanner.nextLine();
-        List<String> numbers = Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8");
-        if (numbers.contains(numberString)) {
+        if (AVAILABLE_MENU_NUMBERS.contains(numberString)) {
             return numberString;
         } else {
             System.out.println("Nincs ilyen menüpont.");
@@ -109,7 +109,7 @@ public class MeetingRoomsController {
         int length = getSizeOfMeetingRoom("hosszát");
         System.out.println();
 
-        mrs.save(name, width, length);
+        service.save(name, width, length);
         System.out.println("A tárgyaló adatai mentésre kerültek.");
         System.out.println();
     }
@@ -131,9 +131,9 @@ public class MeetingRoomsController {
         System.out.println("A tárgyalók nevei " + type.getWord() + "sorrendben:");
         System.out.println();
         if (type == OrderingType.ABC) {
-            System.out.println(mrs.getMeetingroomsOrderedByName());
+            System.out.println(service.getMeetingroomsOrderedByName());
         } else if (type == OrderingType.BACK) {
-            List<String> names = mrs.getMeetingroomsOrderedByName();
+            List<String> names = service.getMeetingroomsOrderedByName();
             Collections.reverse(names);
             System.out.println(names);
         } else {
@@ -145,13 +145,13 @@ public class MeetingRoomsController {
     private void writeEverySecondMeetingRoom() {
         System.out.println("Minden második tárgyaló:");
         System.out.println();
-        System.out.println(mrs.getEverySecondMeetingRoom());
+        System.out.println(service.getEverySecondMeetingRoom());
     }
 
     private void writeAreas() {
         System.out.println("A tárgyalók területe csökkenő sorrendben:");
         System.out.println();
-        List<String> dataOfMeetingRooms = mrs.getMeetingRoomsInString(ListType.AREAS);
+        List<String> dataOfMeetingRooms = service.getMeetingRoomsInString(ListType.AREAS);
         Collections.reverse(dataOfMeetingRooms);
         System.out.println(dataOfMeetingRooms);
     }
@@ -161,7 +161,7 @@ public class MeetingRoomsController {
         String name = scanner.nextLine();
         System.out.println();
 
-        List<String> dataOfMeetingRoom = mrs.getMeetingRoomsInString(ListType.EXACT, name);
+        List<String> dataOfMeetingRoom = service.getMeetingRoomsInString(ListType.EXACT, name);
         if (dataOfMeetingRoom.size() == 0) {
             System.out.println("Sajnos nem található tárgyaló ilyen néven.");
         } else {
@@ -176,7 +176,7 @@ public class MeetingRoomsController {
         String prefix = scanner.nextLine();
         System.out.println();
 
-        List<String> dataOfMeetingRooms = mrs.getMeetingRoomsInString(ListType.PREFIX, prefix);
+        List<String> dataOfMeetingRooms = service.getMeetingRoomsInString(ListType.PREFIX, prefix);
         if (dataOfMeetingRooms.size() == 0) {
             System.out.println("Sajnos nem található tárgyaló ilyen néven.");
         } else {
@@ -196,7 +196,7 @@ public class MeetingRoomsController {
                 System.out.println("Nem megfelelő számérték.");
             }
         }
-        List<String> dataOfMeetingRooms = mrs.getMeetingRoomsInString(ListType.AREA_GREATER, area);
+        List<String> dataOfMeetingRooms = service.getMeetingRoomsInString(ListType.AREA_GREATER, area);
         System.out.println("A keresett tárgyalók adatai:");
         System.out.println(dataOfMeetingRooms);
         System.out.println();

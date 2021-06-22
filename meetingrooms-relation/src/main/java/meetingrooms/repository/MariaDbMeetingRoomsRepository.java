@@ -83,18 +83,23 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
     @Override
     public void deleteAll() {
         jdbcTemplate.update("delete from meetingrooms;");
+        jdbcTemplate.update("delete from meetings;");
     }
 
     private List<MeetingRoom> getMeetingRoomsFromResultSet(ResultSet rs) {
         List<MeetingRoom> meetingRooms = new ArrayList<>();
         try {
-            while (rs.next()) {
-                meetingRooms.add(new MeetingRoom(rs.getString("mr_name"), rs.getInt("mr_width"), rs.getInt("mr_length")));
-            }
+            addMeetingRooms(rs, meetingRooms);
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot get data.", sqle);
         }
         return meetingRooms;
+    }
+
+    private void addMeetingRooms(ResultSet rs, List<MeetingRoom> meetingRooms) throws SQLException {
+        while (rs.next()) {
+            meetingRooms.add(new MeetingRoom(rs.getString("mr_name"), rs.getInt("mr_width"), rs.getInt("mr_length")));
+        }
     }
 
     @Override
@@ -136,54 +141,51 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
 
     private void saveMeetings(long id, List<Meeting> meetings, Connection conn) throws Exception {
         for (Meeting m : meetings) {
-            try (PreparedStatement stmt = conn.prepareStatement("insert into meetings(mr_id, holder_name, begin_time, end_time) values (?, ?, ?, ?);")) {
-                stmt.setLong(1, id);
-                stmt.setString(2, m.getNameOfMeetingHolder());
-                stmt.setTimestamp(3, Timestamp.valueOf(m.getBeginTime()));
-                stmt.setTimestamp(4, Timestamp.valueOf(m.getEndTime()));
+            save(id, conn, m);
+        }
+    }
 
-                stmt.executeUpdate();
-            }
+    private void save(long id, Connection conn, Meeting m) throws SQLException {
+        try (PreparedStatement stmt = conn.prepareStatement("insert into meetings(mr_id, holder_name, begin_time, end_time) values (?, ?, ?, ?);")) {
+            stmt.setLong(1, id);
+            stmt.setString(2, m.getNameOfMeetingHolder());
+            stmt.setTimestamp(3, Timestamp.valueOf(m.getBeginTime()));
+            stmt.setTimestamp(4, Timestamp.valueOf(m.getEndTime()));
+
+            stmt.executeUpdate();
         }
     }
 
     @Override
     public List<MeetingRoom> loadMeetingRoomsWithMeetings() {
-        try (Connection conn = dataSource.getConnection()) {
-            conn.setAutoCommit(false);
+        try (Connection conn = dataSource.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("select * from meetingrooms;")) {
 
-            try {
-                List<MeetingRoom> meetingRooms = loadMeetingRooms(conn);
-                conn.commit();
-                return meetingRooms;
-            } catch (Exception ex) {
-                conn.rollback();
-                throw new IllegalStateException("Transaction not succeeded!", ex);
-            }
+            List<MeetingRoom> meetingRooms = loadMeetingRooms(rs, conn);
+
+            return meetingRooms;
 
         } catch (SQLException sqle) {
-            throw new IllegalStateException("Wrong connection.", sqle);
+            throw new IllegalStateException("Cannot load something from database.", sqle);
         }
     }
 
-    private List<MeetingRoom> loadMeetingRooms(Connection conn) throws Exception {
+    private List<MeetingRoom> loadMeetingRooms(ResultSet rs, Connection conn) throws SQLException {
         List<MeetingRoom> meetingRooms = new ArrayList<>();
-        try (Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from meetingrooms;")) {
-            while (rs.next()) {
-                long id = rs.getLong("mr_id");
-                String name = rs.getString("mr_name");
-                int width = rs.getInt("mr_width");
-                int length = rs.getInt("mr_length");
-                List<Meeting> meetings = loadMeetings(conn, id);
+        while (rs.next()) {
+            long id = rs.getLong("mr_id");
+            String name = rs.getString("mr_name");
+            int width = rs.getInt("mr_width");
+            int length = rs.getInt("mr_length");
+            List<Meeting> meetings = loadMeetings(conn, id);
 
-                meetingRooms.add(new MeetingRoom(id, name, width, length, meetings));
-            }
+            meetingRooms.add(new MeetingRoom(id, name, width, length, meetings));
         }
         return meetingRooms;
     }
 
-    private List<Meeting> loadMeetings(Connection conn, long id) throws Exception {
+    private List<Meeting> loadMeetings(Connection conn, long id) throws SQLException {
         try (PreparedStatement stmt = conn.prepareStatement("select * from meetings where mr_id = ?;")) {
             stmt.setLong(1, id);
 
@@ -191,7 +193,7 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
         }
     }
 
-    private List<Meeting> getMeetings(PreparedStatement stmt) throws Exception {
+    private List<Meeting> getMeetings(PreparedStatement stmt) throws SQLException {
         List<Meeting> meetings = new ArrayList<>();
         try (ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {

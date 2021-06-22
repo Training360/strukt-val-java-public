@@ -14,12 +14,12 @@ import java.util.List;
 
 public class MeetingRoomAndMeetingsHandlerTest {
 
-    MeetingRoomsService mrs = new MeetingRoomsService(new MariaDbMeetingRoomsRepository());
+    MeetingRoomsService service = new MeetingRoomsService(new MariaDbMeetingRoomsRepository());
     List<MeetingRoom> meetingRooms;
 
     @BeforeEach
     void setUp() {
-        mrs.deleteAll();
+        service.deleteAll();
 
         List<Meeting> meetings1 = new ArrayList<>();
         meetings1.add(new Meeting("Kiss József", LocalDateTime.of(2021, 6, 14, 10, 30), LocalDateTime.of(2021, 6, 14, 12, 0)));
@@ -45,8 +45,8 @@ public class MeetingRoomAndMeetingsHandlerTest {
 
     @Test
     void testSaveMeetingRoomsAndMeetingsToo() {
-       mrs.saveMeetingRoomsAndMeetingsToo(meetingRooms);
-       List<MeetingRoom> expected = mrs.loadMeetingRoomsWithMeetings();
+       service.saveMeetingRoomsAndMeetingsToo(meetingRooms);
+       List<MeetingRoom> expected = service.loadMeetingRoomsWithMeetings();
 
         Assertions.assertEquals(3, expected.size());
         Assertions.assertEquals("Kettes tárgyaló", expected.get(1).getName());

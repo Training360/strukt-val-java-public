@@ -13,24 +13,24 @@ import java.util.List;
 
 public class MeetingRoomsServiceTest {
 
-    private MeetingRoomsService mrs = new MeetingRoomsService(new InMemoryMeetingRoomsRepository());
+    private MeetingRoomsService service = new MeetingRoomsService(new InMemoryMeetingRoomsRepository());
 
     @BeforeEach
     void init() {
-        mrs.deleteAll();
+        service.deleteAll();
 
-        mrs.save("egyes", 2, 3);
-        mrs.save("kettes", 3, 4);
-        mrs.save("hármas", 4, 5);
-        mrs.save("négyes", 4, 3);
-        mrs.save("ötös", 2, 5);
-        mrs.save("hatos", 2, 6);
-        mrs.save("hetes", 5, 7);
+        service.save("egyes", 2, 3);
+        service.save("kettes", 3, 4);
+        service.save("hármas", 4, 5);
+        service.save("négyes", 4, 3);
+        service.save("ötös", 2, 5);
+        service.save("hatos", 2, 6);
+        service.save("hetes", 5, 7);
     }
 
     @Test
     void testGetMeetingroomsOrderedByName() {
-        List<String> expected = mrs.getMeetingroomsOrderedByName();
+        List<String> expected = service.getMeetingroomsOrderedByName();
 
         Assertions.assertEquals(7, expected.size());
         Assertions.assertEquals("egyes", expected.get(0));
@@ -40,7 +40,7 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetEverySecondMeetingRoom() {
-        List<String> expected = mrs.getEverySecondMeetingRoom();
+        List<String> expected = service.getEverySecondMeetingRoom();
 
         Assertions.assertEquals(4, expected.size());
         Assertions.assertEquals("hatos", expected.get(1));
@@ -49,7 +49,7 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetMeetingRoomsAreas() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.AREAS);
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.AREAS);
 
         Assertions.assertEquals(6, expected.get(0).getArea());
         Assertions.assertEquals("ötös", expected.get(1).getName());
@@ -58,7 +58,7 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetMeetingRoomsExact() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.EXACT, "kettes");
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.EXACT, "kettes");
 
         Assertions.assertEquals(1, expected.size());
         Assertions.assertEquals(3, expected.get(0).getWidth());
@@ -67,14 +67,14 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetMeetingRoomsExactNotExisting() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.EXACT, "xyz");
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.EXACT, "xyz");
 
         Assertions.assertEquals(0, expected.size());
     }
 
     @Test
     void testGetMeetingRoomsPrefix() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.PREFIX, "es");
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.PREFIX, "es");
 
         Assertions.assertEquals(4, expected.size());
         Assertions.assertEquals("hetes", expected.get(1).getName());
@@ -83,14 +83,14 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetMeetingRoomsPrefixNotExisting() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.PREFIX, "xyz");
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.PREFIX, "xyz");
 
         Assertions.assertEquals(0, expected.size());
     }
 
     @Test
     void testGetMeetingRoomsAreaGreater() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.AREA_GREATER, 15);
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.AREA_GREATER, 15);
 
         Assertions.assertEquals(2, expected.size());
         Assertions.assertEquals("hármas", expected.get(0).getName());
@@ -99,7 +99,7 @@ public class MeetingRoomsServiceTest {
 
     @Test
     void testGetMeetingRoomsAreaGreaterTooBigParameterNumber() {
-        List<MeetingRoom> expected = mrs.getMeetingRooms(ListType.AREA_GREATER, 100);
+        List<MeetingRoom> expected = service.getMeetingRooms(ListType.AREA_GREATER, 100);
 
         Assertions.assertEquals(0, expected.size());
     }

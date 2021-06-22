@@ -10,22 +10,22 @@ import java.util.stream.IntStream;
 
 public class MeetingRoomsService {
 
-    private MeetingRoomsRepository mrr;
+    private MeetingRoomsRepository repository;
 
-    public MeetingRoomsService(MeetingRoomsRepository mrr) {
-        this.mrr = mrr;
+    public MeetingRoomsService(MeetingRoomsRepository repository) {
+        this.repository = repository;
     }
 
     public void save(String name, int width, int length) {
-        mrr.save(name, width, length);
+        repository.save(name, width, length);
     }
 
     public List<String> getMeetingroomsOrderedByName() {
-        return mrr.getMeetingroomsOrderedByName();
+        return repository.getMeetingroomsOrderedByName();
     }
 
     public List<String> getEverySecondMeetingRoom() {
-        List<String> names = mrr.getEverySecondMeetingRoom();
+        List<String> names = repository.getEverySecondMeetingRoom();
         return IntStream.range(0, names.size())
                 .filter(index -> index % 2 == 0)
                 .mapToObj(names::get)
@@ -39,7 +39,7 @@ public class MeetingRoomsService {
 
     public List<MeetingRoom> getMeetingRooms(ListType type) {
         if (type == ListType.AREAS) {
-            List<MeetingRoom> meetingRooms = mrr.getMeetingRooms();
+            List<MeetingRoom> meetingRooms = repository.getMeetingRooms();
             meetingRooms.sort(Comparator.comparing(MeetingRoom::getArea));
             return meetingRooms;
         } else {
@@ -55,10 +55,10 @@ public class MeetingRoomsService {
     public List<MeetingRoom> getMeetingRooms(ListType type, String nameOrPrefix) {
         List<MeetingRoom> meetingRooms;
         if (type == ListType.EXACT) {
-            meetingRooms = mrr.getExactMeetingRoomByName(nameOrPrefix);
+            meetingRooms = repository.getExactMeetingRoomByName(nameOrPrefix);
             meetingRooms.sort(Comparator.comparing(MeetingRoom::getArea));
         } else if (type == ListType.PREFIX) {
-            meetingRooms = mrr.getMeetingRoomsByPrefix(nameOrPrefix);
+            meetingRooms = repository.getMeetingRoomsByPrefix(nameOrPrefix);
             meetingRooms.sort(Comparator.comparing(MeetingRoom::getName, Collator.getInstance(new Locale("hu", "HU"))));
         } else {
             throw new IllegalArgumentException("Unexpected type of list.");
@@ -73,7 +73,7 @@ public class MeetingRoomsService {
 
     public List<MeetingRoom> getMeetingRooms(ListType type, int area) {
         if (type == ListType.AREA_GREATER) {
-            return mrr.getMeetingRooms().stream()
+            return repository.getMeetingRooms().stream()
                     .filter(meetingRoom -> meetingRoom.getArea() > area)
                     .collect(Collectors.toList());
         } else {
@@ -89,19 +89,19 @@ public class MeetingRoomsService {
     }
 
     public void deleteAll() {
-        mrr.deleteAll();
+        repository.deleteAll();
     }
 
     public void saveMeetingRoomAndMeetingsToo(MeetingRoom meetingRoom) {
-        mrr.saveMeetingRoomAndMeetingsToo(meetingRoom);
+        repository.saveMeetingRoomAndMeetingsToo(meetingRoom);
     }
 
     public void saveMeetingRoomsAndMeetingsToo(List<MeetingRoom> meetingRooms) {
-        meetingRooms.forEach(meetingRoom -> mrr.saveMeetingRoomAndMeetingsToo(meetingRoom));
+        meetingRooms.forEach(meetingRoom -> repository.saveMeetingRoomAndMeetingsToo(meetingRoom));
     }
 
     public List<MeetingRoom> loadMeetingRoomsWithMeetings() {
-        return mrr.loadMeetingRoomsWithMeetings();
+        return repository.loadMeetingRoomsWithMeetings();
     }
 
 
