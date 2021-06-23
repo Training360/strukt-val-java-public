@@ -16,10 +16,11 @@ import java.util.List;
 public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    private MariaDbDataSource dataSource;
 
     public MariaDbMeetingRoomsRepository() {
         try {
-            MariaDbDataSource dataSource = new MariaDbDataSource();
+            dataSource = new MariaDbDataSource();
             dataSource.setUrl("jdbc:mariadb://localhost:3306/meetingrooms?useUnicode=true");
             dataSource.setUser("meetingrooms");
             dataSource.setPassword("meetingrooms");
