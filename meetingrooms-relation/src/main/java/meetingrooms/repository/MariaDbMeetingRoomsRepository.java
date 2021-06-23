@@ -15,12 +15,11 @@ import java.util.List;
 
 public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
 
-    private JdbcTemplate jdbcTemplate;
-    private MariaDbDataSource dataSource;
+    private final JdbcTemplate jdbcTemplate;
 
     public MariaDbMeetingRoomsRepository() {
         try {
-            dataSource = new MariaDbDataSource();
+            MariaDbDataSource dataSource = new MariaDbDataSource();
             dataSource.setUrl("jdbc:mariadb://localhost:3306/meetingrooms?useUnicode=true");
             dataSource.setUser("meetingrooms");
             dataSource.setPassword("meetingrooms");
@@ -38,17 +37,18 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
     @Override
     public MeetingRoom save(String name, int width, int length) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcTemplate.update(connection -> {
-                    PreparedStatement ps = connection.prepareStatement("insert into meetingrooms(mr_name, mr_width, mr_length) values (?, ?, ?);",
-                            Statement.RETURN_GENERATED_KEYS);
-                    ps.setString(1, name);
-                    ps.setInt(2, width);
-                    ps.setInt(3, length);
-                    return ps;
-                }, keyHolder
-        );
+        jdbcTemplate.update(connection -> prepareStatement(connection, name, width, length), keyHolder);
         long id = keyHolder.getKey().longValue();
         return new MeetingRoom(id, name, width, length);
+    }
+
+    private PreparedStatement prepareStatement(Connection connection, String name, int width, int length) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement("insert into meetingrooms(mr_name, mr_width, mr_length) values (?, ?, ?);",
+                Statement.RETURN_GENERATED_KEYS);
+        ps.setString(1, name);
+        ps.setInt(2, width);
+        ps.setInt(3, length);
+        return ps;
     }
 
     @Override
@@ -83,23 +83,22 @@ public class MariaDbMeetingRoomsRepository implements MeetingRoomsRepository {
     @Override
     public void deleteAll() {
         jdbcTemplate.update("delete from meetingrooms;");
-        jdbcTemplate.update("delete from meetings;");
     }
 
     private List<MeetingRoom> getMeetingRoomsFromResultSet(ResultSet rs) {
-        List<MeetingRoom> meetingRooms = new ArrayList<>();
         try {
-            addMeetingRooms(rs, meetingRooms);
+            return createMeetingRooms(rs);
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot get data.", sqle);
         }
-        return meetingRooms;
     }
 
-    private void addMeetingRooms(ResultSet rs, List<MeetingRoom> meetingRooms) throws SQLException {
+    private List<MeetingRoom> createMeetingRooms(ResultSet rs) throws SQLException {
+        List<MeetingRoom> meetingRooms = new ArrayList<>();
         while (rs.next()) {
             meetingRooms.add(new MeetingRoom(rs.getString("mr_name"), rs.getInt("mr_width"), rs.getInt("mr_length")));
         }
+        return meetingRooms;
     }
 
     @Override
