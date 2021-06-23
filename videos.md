@@ -302,3 +302,20 @@ Ezen struktúra segítségével oldd meg a következő feladatokat:
     1. Unit teszt ahol a CarService osztályt mockolod.
     2. Integrációs teszt ahol beindítod a Springet és úgy teszteled a működést.
 ```
+
+## 2021.06.23.
+
+- A konzultációt István tartotta a Dockerről. A következő témákról és kérdésekről 
+  esett szó részletesen:
+
+    * Miért számított nagy dolognak a szállítmányozásban a konténerek létrehozása? 
+    * A konténeres szállítás előnyei.
+    * Ennek analógiájára megalkották a szoftverek konténerekben való üzemeltetésének  
+      koncepcióját. Mik ennek az előnyei?
+    * Mi dolga mindezzel a szoftverfejlesztőnek?
+    * Honnan lehet tudni, hányas porton indul el a konténerben egy alkalmazás?
+    * A docker használatához szükséges parancsok.
+    * Egy docker image létrehozása, majd az alkalmazás elindítása konténerben.
+    * Docker layerek.
+    * A `Dockerfile`-ba írható parancsok.
+    * Egyéb témák röviden (Twelve-Factor App, Maven wrapper)
