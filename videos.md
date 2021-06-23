@@ -86,7 +86,7 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
   Először Kristóf megosztott a GitHubon egy előkészített projektet, amit forkolni kellett és klónozni a saját gépre, 
   majd ebben dolgozni. Több különböző metódust kellett implementálni streamek használatával. 
   Opcionális házi feladatként is kaptunk még további feladatokat.
-- Kristóf gyakorló projektjének linkje: https://github.com/bkris21/streams-demo-public
+- Kristóf gyakorló projektjének linkje: [https://github.com/bkris21/streams-demo-public](https://github.com/bkris21/streams-demo-public)
 - A feladat szövege: 
     * Órán megoldott feladatok:
       Határozd meg a rendelések darabszámát egy paraméterként kapott státusz alapján!
@@ -146,3 +146,159 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
     * Paraméterezett tesztesetek használata.
     * Mikor/miért ad vissza egy stream `Optional`-t?
     * Tesztesetek futtatása Mavenből, verziószámok, stb. - egyéni problémák megbeszélése.
+
+## 2021.06.15.
+
+- Ezen a napon csoportmunka volt. Kristóf már napközben kiírta a Slack-re, hogy milyen 
+  módon kellene előkészíteni a feladatot, hogy ne a technikai részletekkel menjen az idő 
+  a konzultáción.
+- Ezután kiadta a feladatot és párokba osztotta a résztvevőket. A közös munkát GitHub-on 
+  keresztül kellett megoldani.
+- Majd körülbelül egy óra teljes csend és elmélyült munka következett, két-három rövid 
+  kérdésfeltétellel és válasszal a feladat értelmezésére vonatkozóan.
+- A konzultáció végén pedig megbeszéltük a tapasztalatokat, levontuk a tanulságokat. A megoldás
+  közös megbeszélését áttettük a következő konzultációra.
+- A feladat szövege egyben:
+
+```
+# Csapatmunka feladat
+
+## Feladat
+A mai feladatban az EB meccsek eredményeit kell egy alkalmazásban  
+tárolnod, és különböző feladatokat elvégezned.
+
+### Game
+Legyen egy `Game` nevű osztályod a következő attribútumokkal
++ `firstCountry (String)`
++ `secondCountry (String)`
++ `firstCountryScore (int)`
++ `secondCountryScore (int)`
+
+Legyen benne egy metódus ami visszaadja a győztes ország nevét!
+
+### GameRepository
+Legyen egy `GameRepository` nevű osztályod, melynek van egy meccseket
+memóriában tároló listája.
+
+A listához elemet kétféleképpen lehet hozzáadni. Vagy egy `addGame(Game game)` metódussal,
+vagy fájlból beolvasva, ahol a fájl egy csv állomány.
+
+### GameService
+Legyen egy `GameService` nevű osztályod, ami különböző statisztikai adatokat jelenít meg.
+Legyen egy `GameRepository` attribútuma amin keresztül eléri a benne lévő listát.
+
+Megvalósítandó metódusok:
+
++ Határozd meg a legnagyobb gólkülönbséggel véget ért mérkőzést
++ Határozd meg hogy egy paraméterül kapott ország hány gólt rúgott eddig
++ Határozd meg az eddig legtöbb gólt rúgó országot
+
+### Tesztelés
+Mindegyik osztályhoz legyen külön tesztosztály. A nem generált metódusokhoz legyen teszteset, lehetőleg több.
+A `GameService` osztály második metódusát paraméterezett teszttel végezd. Ez lehet akár dinamikus teszteset is.
+```
+
+## 2021.06.16.
+
+- Kristóf a Slack-en feltett kérdéseket válaszolta meg:
+
+    * Miért AssertJ-t használunk inkább és nem Hamcrestet?
+    * A "tuple" fogalma és az AssertJ `extracting()` metódusának használata, jó részletesen.
+    * AssertJ soft assert kétféle létrehozása közötti különbség.
+    * Mockolás: színész - dublőr példával, szintén jó részletesen.
+    * `ArgumentCaptor` használata, röviden.
+ 
+- A konzultáció végén fakultatív beszélgetés folyt az előző napi csoportmunkában megoldott 
+  feladattal kapcsolatos tapasztalatokról, valamint GitHub és statikus factory metódusok témákban.
+
+## 2021.06.18. délelőtti konzultáció
+
+- Kristóf a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (tesztelés), 
+  ismétlő kérdések formájában.
+
+## 2021.06.18. délutáni konzultáció
+
+- A konzultációt Medzihradszky Dénes vendég előadó tartotta. A bemutatkozás után a következő témákról 
+  beszélt az előadása során:
+    * Tesztelési alapelvek. 
+    * A tesztelés folyamata (a tervezéstől a lezárásig).
+    * Humán pszichológia és a tesztelés kapcsolata.
+    * Tesztelői és fejleszői gondolkodás különbözősége.
+    * A tesztelés szerepe és helye egy szoftver létrehozási folyamatában.
+    * Teszttípusok.
+    * A kód statikus elemzése, amelyet az IDE és a fordítóprogram végez.
+    * Teszttechnikák.
+    
+- Az előadás PDF anyaga elérhető a [Tesztelésről fejlesztőknek](https://e-learning.training360.com/courses/take/training360-str-hgk-vallalati-backend-kepzes-kozpont/pdfs/25392021-tesztelesrol-fejlesztoknek) 
+  linken.
+- Az oktató szívesen várja a kérdéseket a denes.medzihradszky@training360.com e-mail címen.
+
+## 2021.06.21.
+
+- A konzultáció első 20 percében technikai problémákat beszéltünk meg. Ami fontos, hogy itt van bemutatva 
+  élőben az, hogy hogyan kellene létrehozni a tanfolyami gyakorlati feladatok megoldására szolgáló 
+  projektet, mert ez többeknek nem volt világos. István írta még a Slack-en korábban, hogy az elnevezések 
+  az utánkövethetőség és ellenőrizhetőség miatt a következők legyenek: "Kérem, hogy a teszt témakörhöz 
+  tartozó projekteket a `senior-solutions` repository-ban, a `locations-solution` mappába helyezzétek el. 
+  A Spring Bootos feladatokat pedig a `locations-spring-solution` mappában."
+- Ezután Kristóf röviden beszélt arról, hogy mit is jelent az hogy Spring, mi az, hogy keretrendszer.
+- Majd a _dependency injection_ fogalmát magyarázta meg, és elkezdte megmutatni az alapvető 
+  Springes annotációk működését.
+- Megbeszéltük, hogy a Spring egy **Inversion of Control (IoC)** keretrendszer, melynek lényege, 
+  hogy a komponenskezelést (pl. létrehozást, példányosítást, paraméterezést, megszüntetést, 
+  metódushívást) kiemeljük a programkódból, és egy külső keretrendszerre bízzuk (mint pl. a Spring), 
+  ő pedig átveszi az irányítást és megcsinálja ezeket helyettünk.
+- Valamint megbeszéltük azt is, hogy a _dependency injection_ fogalma nem egyenlő a _dependency inversion_ 
+  fogalmával. Ez utóbbihoz Kristóf belinkelt egy cikket: [A **S-O-L-I-D** alapelvek](https://letscode.hu/2016/04/26/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/)
+  címmel.
+  Emlékeztetőül: 
+  
+    * **Dependency inversion**-nek nevezzük azt, amikor egy osztály úgy használja egy másik osztály
+      objektumát, hogy nem az osztályára hivatkozik, hanem az általa implementált interfészre.
+      Azaz amikor nem egy osztályra mutat a függőség, hanem annak egy interfészére. 
+    * A **dependency injection** pedig a függőség befecskendezése. Az osztály nem maga példányosítja 
+      a függőségeit (amik referencia típusú attribútumok), hanem csak definiálja azokat. Az attribútum 
+      külső forrásból kap értéket. Háromféle létezik belőle: attribútum injection, konstruktor injection 
+      és setter injection.
+      
+- A konzultáció végén Kristóf érdekességként megmutatta még azt, hogyan lehet hozzáférni a Spring által 
+  példányosított Spring Bean objektumokhoz.
+
+## 2021.06.22.
+
+- Ezen a konzultáción önálló feladatmegoldás volt, a végén hallgatói munka nyomán 
+  közösen végignéztük a megoldás menetét.
+- A feladat szövege a következő:
+
+```
+## Feladat
+
+Ebben a feladatban egy használtautó weboldal szolgáltatásait modellezzük.
+
+Legyen egy KmState osztály melyben egy dátum és egy aktuális kilométer van.  
+
+Készíts egy `Car` osztály, melynek attribútumai a márkája, a belül a típusa,
+a kora, illetve legyen még egy Enum az állapotáról, mely lehet
+kiváló, normális vagy rossz, ezen felül legyen egy KmState Lista.
+
+Legyen egy `CarService` osztály mely legyen már Spring komponens. Ebben legyen a 
+kocsik listája néhány beégetett adattal.
+
+Legyen egy `CarController` osztály, mely szintén Spring komponens.
+
+Legyen még egy `HelloController` és `HelloService` osztályod is, mely a kezdő oldal feladatait oldja meg. 
+
+Ezen struktúra segítségével oldd meg a következő feladatokat:
+
++ Alkalmazás indításakor a böngészőben jelenjen meg az "Üdvözlünk az oldalon!" szöveg!
++ /cars url-n keresztül jelenjen meg az összes autó.
++ /types végponton keresztül jelenjenek meg a listában található márkák. 
+
+## Tesztelés
+
++ Készíts unit tesztet a CarService osztály tesztelésére!
++ A CarController osztályt kétféleképpen teszteld:
+
+    1. Unit teszt ahol a CarService osztályt mockolod.
+    2. Integrációs teszt ahol beindítod a Springet és úgy teszteled a működést.
+```
