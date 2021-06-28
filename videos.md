@@ -363,3 +363,28 @@ FH631;US346;2021-06-24 08:53:21;2.9
 - A konzultáció további részében ezt a feladatot oldotta meg mindenki egyénileg, 
   közben elhangzott néhány kérdés. Az utolsó fél órában egyéni problémák 
   megoldása folyt, képernyőmegosztással.
+
+## 2021.06.25.
+
+- A konzultáció elején Kristóf tartott egy rövid bevezetést a RESTful webszolgáltatások 
+  témakörébe.
+- Ezután a nap folyamán a Slack-en feltett kérdéseket beszéltük végig. A következő témák 
+  kerültek részletesen megbeszélésre:
+  
+    * `ResponseEntity` szerepe és használata.
+    * `@RequestParam`, `@PathVariable` és `@RequestBody` használata, hol melyikre van szükség?
+    * Pontosan mit csinál az `@Autowired` annotáció?
+    * A `@NoArgsConstructor`, az `@AllArgsConstructor` és a `@RequiredArgsConstructor` annotációk 
+      használata? Ezek közül melyik kell feltétlenül egy olyan osztályra, amelynek a Lombokkal 
+      generáltatjuk a getter és setter metódusait? (Ugyanehhez a témához a konzultáció végén újra 
+      visszatértünk.)
+    * Mikor célszerű az `AtomicLong` típust használni?
+    * Hogyan használható a Lombok abban az esetben, ha van egy `final` módosítószóval ellátott 
+      adattag az osztályban?
+    * Hány `@RequestParam` annotációval ellátott paramétert adhatunk meg egy metódusnak, illetve 
+      össze lehet-e ezeket fogni egybe valahogyan, ha nagyon sok paraméter lenne?
+    * Egy controller és egy service osztályhoz szokásosan hány repository tartozik?
+    * POST és PUT műveletek közötti különbségek, illetve a CRUD műveletek és a HTTP metódusok 
+      közötti megfeleltethetőség konvenció szerint.
+    * A HTTP kérések felépítése.
+    
