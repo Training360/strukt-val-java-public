@@ -388,3 +388,5 @@ FH631;US346;2021-06-24 08:53:21;2.9
       közötti megfeleltethetőség konvenció szerint.
     * A HTTP kérések felépítése.
     
+- A konzultáció végén Kristóf végigcsinálta a múlt heti bicikli sharing feladatot, hogy meg tudjuk 
+  beszélni a megoldást közösen.
