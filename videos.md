@@ -364,7 +364,7 @@ FH631;US346;2021-06-24 08:53:21;2.9
   közben elhangzott néhány kérdés. Az utolsó fél órában egyéni problémák 
   megoldása folyt, képernyőmegosztással.
 
-## 2021.06.25.
+## 2021.06.28.
 
 - A konzultáció elején Kristóf tartott egy rövid bevezetést a RESTful webszolgáltatások 
   témakörébe.
@@ -390,3 +390,62 @@ FH631;US346;2021-06-24 08:53:21;2.9
     
 - A konzultáció végén Kristóf végigcsinálta a múlt heti bicikli sharing feladatot, hogy meg tudjuk 
   beszélni a megoldást közösen.
+
+## 2021.06.29.
+
+- Ezen a konzultáción önálló feladatmegoldás volt, a végén Kristóf végigvezette a megoldás menetét.
+- A feladat szövege a következő:
+
+```
+## Feladat
+
+A mai feladatban ismét egy filmekkel foglalkozó alkalmazást kell összeraknod.
+
+A `Movie` entitásnak legyen egy azonosítója, egy címe, egy hossza, egy, az eddigi értékeléseket 
+tartalmazó listája és egy értékelésátlaga.
+
+Minden egyes alkalommal amikor egy értékelést kap a film, akkor az értékelésátlag ennek megfelelően változik!
+
+Legyen egy `MovieService` osztályod, ami listában tárolja a filmeket. Kezdetben a lista üres, később 
+tudunk filmet hozzáadni. 
+
+Legyen egy `MovieController` ami alapértelmezetten az `api/movies` URL-en várja a kéréseket. 
+
+A következő funkciókat kell megvalósítani:
+
+* Lehessen lekérni a filmeket, de csak a cím, a hossz és az átlagértékelés jelenjen meg, opcionálisan 
+query-ként lehessen szűrni filmcímre.
+* A `/{id}` URL-en keresztül lehessen egy aktuális filmet lekérdezni. 
+* Lehessen felvenni új filmet a listába, ilyenkor csak a címet és a hosszt adjuk meg.
+* A `/{id}/rating` URL-en keresztül lehessen egy filmre értékelést adni és lekérdezni. 
+Ekkor csak egy számot kapunk egész számként, és ezt adjuk hozzá a film értékelés listájához, 
+majd térjünk vissza a már frissített értékekkel. Figyeljünk arra, hogy ugyanazt az értékelést 
+többször is megkaphatja a film. 
+* Lehessen filmet törölni az `id` alapján. 
+
+Ne felejts el unit és integrációs tesztet írni!
+```
+
+- Kristóf azt fűzte még hozzá a feladathoz, hogy mivel maga a feladat elég kiadós egy konzultáció idejére, ezért a
+  tesztelést csak HTTP-requestek formájában végezzük, és a teszteseteket a konzultáció idején kívül, otthon érdemes
+  megírni.
+- A konzultáció során elhangzott végig önálló munka folyt, valamint elhangzott pár kisebb egyéni kérdés a feladattal
+  kapcsolatosan.
+
+## 2021.06.30.
+
+- Ezen a konzultáción a Slack-en feltett és a konzultáció közben felmerült kérdéseket beszéltünk meg.
+  A következő témák kerültek sorra:
+
+    * A tegnapi konzultáció végén, a videófelvétel leállítása után került sor egy hallgatónál felmerült
+      hiba közös debugolására, amit most Kristóf a hasznossága miatt röviden újra bemutatott.
+    * Röviden visszatértünk a két nappal ezelőtti `@RequestParam`, `@PathVariable`, `@RequestBody` közötti
+      különbség témájához.
+    * Szó esett röviden a jövő heti vizsga technikai részleteiről.
+    * Felmerült egy kérdés, hogy a `ModelMapper`-t vajon mockolni kell-e, ha unit tesztet szeretnénk írni a
+      service osztályunkra. Illetve ha nem mockoljuk, akkor az még unit tesztnek minősül-e?
+    * Kristóf részletesen összefoglalta, hogy milyen típusú tesztelési lehetőségek vannak, milyen típusú
+      tesztosztályokat lehet írni, melyik hogy működik, melyiket mire használjuk.
+    * Majd a validáció és az egyszerű hibakezelés került szóba.
+    * Ezután további technikai részletek következtek a vizsgáról.
+    * És még egy kérdés arról, hogy mi mindenre tehetünk annotációt.
