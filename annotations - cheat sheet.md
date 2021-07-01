@@ -177,7 +177,7 @@
 
 * `@Tag` - Ezzel az annotációval lehet megadni egyedi elnevezést a controller osztálynak, hogy a dokumentációban 
    mi jelenjen meg.
-* `@Schema()` - Személyreszabható, hogy az egyes attribútumok mellett mi jelenjen meg névként a felhasználói felületen, 
+* `@Schema()` - Személyre szabható, hogy az egyes attribútumok mellett mi jelenjen meg névként a felhasználói felületen, 
    sőt, egy értéket is meg lehet adni példaként.
 * `@Operation` - Magáról az adott metódusról ezzel az annotációval tudunk megadni rövidebb és hosszabb leírást, amely 
    bele fog kerülni a dokumentációba.
@@ -213,7 +213,7 @@ annotáció legyen, rá kell tenni ezt az annotációt, amelynek paraméterül m
 
 ## Spring Boot konfiguráció beolvasása:
 
-* `@Value` - Egy konfigurációs értékek injektálására is használható. Paraméterként meg kell adni a kívánt konfigurációs érték kulcsát.
+* `@Value` - Konfigurációs értékek injektálására is használható. Paraméterként meg kell adni a kívánt konfigurációs érték kulcsát.
 * `@ConfigurationProperties` - Ezt az annotációt egy olyan osztályra tesszük, melynek attribútumait konfigurációból töltjük fel.
 * `@EnableConfigurationProperties()` - Az előző annotációval ellátott konfigurációs osztályra kell ezzel az annotációval hivatkozni,
 ekkor példányosítja a Spring, az `application.properties`-ben szereplő értékekkel feltöltve.
