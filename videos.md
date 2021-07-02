@@ -449,3 +449,11 @@ Ne felejts el unit és integrációs tesztet írni!
     * Majd a validáció és az egyszerű hibakezelés került szóba.
     * Ezután további technikai részletek következtek a vizsgáról.
     * És még egy kérdés arról, hogy mi mindenre tehetünk annotációt.
+
+## 2021.07.02.
+
+- A konzultáció elején közös interaktív gyakorló teszt volt.
+- Ezután Kristóf gyorsan végigszaladt az előző napra kiadott gyakorló teszt kérdésein, közösen 
+  megbeszéltük a helyes megoldásokat.
+- A konzultáció további részében Kristóf részletes magyarázattal ellátva és a felmerülő hallgatói kérdéseket 
+  megválaszolva bemutatta a hét közbeni gyakorló vizsgafeladat megoldását.
