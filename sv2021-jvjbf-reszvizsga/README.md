@@ -42,7 +42,7 @@ A `MovieController` osztály alapértelmezzetten a `api/cinema` URL-n várja a k
 * Lehessen törölni az összes filmet. 
 
 * A következő szempontokat vegyük még figyelembe:
-	* Új film címe nem lehet üres, és legalább 20 helynek kell lennie a maximumnak
+	* Új film címe nem lehet üres, és legalább 20 helynek kell lennie rá
 	* Ha a megfelelő id-n keresztül nem található a film akkor 404-es státuszkóddal térjünk vissza.
 	* Ha több helyet akarunk foglalni mint ahány szabad hely van, akkor ne történjen meg a foglalás. Térjünk vissza 400 BAD_REQUEST státuszkóddal
   
