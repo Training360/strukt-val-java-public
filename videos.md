@@ -457,3 +457,17 @@ Ne felejts el unit és integrációs tesztet írni!
   megbeszéltük a helyes megoldásokat.
 - A konzultáció további részében Kristóf részletes magyarázattal ellátva és a felmerülő hallgatói kérdéseket 
   megválaszolva bemutatta a hét közbeni gyakorló vizsgafeladat megoldását.
+
+## 2021.07.05.
+
+- Könyvtárnév, project, repository elnevezések. Monolit alkalmazás kontra microservice.
+- Hogyan ellenőrizzük a feladatmegoldásokat. Hogyan commitoljunk. Hány repo hozható létre? Repo pinelése GitHubon.
+- Mi a különbség a `findFirst()` és a `findAny()` között
+- Lehet-e stream bejárás közben az eredeti kollekciót módosítani?
+- RFC 7807-ben mi az a `type` URI?
+- ModelMappert mockoljunk-e? Szerintem ne.
+- Injektálás típus alapján.
+- Miért válasszuk szét a unit és integrációs teszteket?
+- Mi az a Tomcat és Servlet API?
+- HTTP protokoll tulajdonságai.
+- Hogy néz ki a hívási lánc egy request esetén?
