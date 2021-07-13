@@ -471,3 +471,16 @@ Ne felejts el unit és integrációs tesztet írni!
 - Mi az a Tomcat és Servlet API?
 - HTTP protokoll tulajdonságai.
 - Hogy néz ki a hívási lánc egy request esetén?
+
+## 2021.07.12.
+
+- IntelliJ IDEA JDK verziójának beállítása `maven-compiler-plugin`-nel.
+- Validáció beépített annotációval
+- Hiba, validációs hiba jelzése Zalando `problem-spring-web-starter` használatával
+- Saját validáció implementálása
+- Bejövő http request feldolgozása, validáció
+- Unit és integrációs tesztek, integrációs tesztek típusai
+- Validáció tesztelése RestTemplate használatával
+- ApplicationContext, ComponentScan, `@Bean`, `@Autowired`, Dependency Injection működése
+- Mit jelent, hogy injektáljunk, ahelyett, hogy static factory metódust használjunk?
+- Hogy injektáljunk, ha egy attribútumnak nem akarunk értéket adni?
