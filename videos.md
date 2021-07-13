@@ -321,7 +321,12 @@ esett szó részletesen:
 * A `Dockerfile`-ba írható parancsok.
 * Egyéb témák röviden (Twelve-Factor App, Maven wrapper)
 
-## 2021.06.25.
+## 2021.06.25. délelőtti konzultáció
+
+- Kristóf a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (Spring, Docker),
+  ismétlő kérdések formájában.
+
+## 2021.06.25. délutáni konzultáció
 
 - A konzultáció elején közös interaktív gyakorló teszt volt.
 - Ezután Kristóf kiadott egy gyakorló feladatot, amelynek szövege a következő:
@@ -450,7 +455,12 @@ Ne felejts el unit és integrációs tesztet írni!
     * Ezután további technikai részletek következtek a vizsgáról.
     * És még egy kérdés arról, hogy mi mindenre tehetünk annotációt.
 
-## 2021.07.02.
+## 2021.07.02. délelőtti konzultáció
+
+- Kristóf a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (REST webszolgáltatások),
+  ismétlő kérdések formájában.
+
+## 2021.07.02. délutáni konzultáció
 
 - A konzultáció elején közös interaktív gyakorló teszt volt.
 - Ezután Kristóf gyorsan végigszaladt az előző napra kiadott gyakorló teszt kérdésein, közösen 
@@ -484,3 +494,44 @@ Ne felejts el unit és integrációs tesztet írni!
 - ApplicationContext, ComponentScan, `@Bean`, `@Autowired`, Dependency Injection működése
 - Mit jelent, hogy injektáljunk, ahelyett, hogy static factory metódust használjunk?
 - Hogy injektáljunk, ha egy attribútumnak nem akarunk értéket adni?
+
+## 2021.07.13.
+
+- A konzultációt István tartotta. Tegnap óta és az órán felmerült, valamint korábbról
+maradt kérdéseket válaszolt meg:
+
+* `Violation`: Véletlen, hogy a videóban is így lett elnevezve és
+  a `problem-spring-web-starter` is ezzel a névvel generálja a
+  validációs hibát reprezentáló osztályt. Valószínűleg közös
+  megegyezésen alapul.
+* Validációs hibák üzenetei egy valós alkalmazásnál nem beégetett
+  üzenetek, hanem nyelvi kulcsok, és a hozzájuk tartozó értéket
+  egy külön fájlból olvassa ki a program. (Igazi alkalmazásban a
+  forráskódban nem lehet olyan szöveg, amit a felhasználónak írunk
+  ki, hanem ezek mind külön fájlokban vannak, a forráskódban pedig
+  nyelvi kulcsok találhatóak.)
+* Különbség a HTTP POST és PUT metódusa és a használatuk között.
+* Adatbázisból való törlésnél konvenció szerint nem adjuk vissza
+  a letörölt entitást.
+* Mi a különbség az entitás lista DTO listává alakításának két
+  módja között? (Az egyik mód az, ha van egy entitás listám és
+  azt a `ModelMapper` mappeli át DTO listává, a másik mód pedig
+  az, hogy egy streamben először az entitásokat mappelem át DTO-vá,
+  majd azokat gyűjtöm ossze egy listába.)
+* Adatbázis adatok módosításánál azt a legegyszerűbb kezelni, ha
+  nem csak a módosuló adatokat küldjük be, hanem mindent újra.
+* Egy open API lekérdezése.
+* Mi jelent az, hogy "legacy-application"?
+* Lehetséges-e Docker Desktop és VirtualBox együttes használata a gépen.
+* Docker használata esetén az adatok konténertől külön történő tárolása.
+* Hogyan történik a kódduplikátumok ellenőrzése? (Vizsga esetén egymásról
+  való másolás felderítésére. :) )
+* Mi a Docker konténer valódi használati módja az életben?
+* Miért éri meg opensource projektet fejleszteni?
+
+- Ezután az erre a hétre betervezett JPA tananyaggal kapcsolatosan 
+felmerült néhány apróbb kérdést beszéltünk meg? (Mikor generáltatjuk a JPA-val 
+az SQL-utasításokat, és mikor használjuk a Flyway-t? Vizsgán, projekt feladatban 
+melyiket kell használni? Néhány olyan is felmerült, amelyre az volt a válasz, hogy 
+később lesz róla bővebben szó.)
+- Végül István kiosztott egy házi feladatot.
