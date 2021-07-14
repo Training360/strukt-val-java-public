@@ -560,3 +560,15 @@ két attribútummal, és arra tegyél annotációt! Vagy az egész commandra teg
 elválasztva.)
 * A ügytípusnál a validátorból kell elérni a service-t. Próbáld az `@Autowired` annotációval field injektálni!
 
+## 2021.07.14.
+
+- István ezen a konzultáción megmutatta, hogyan lehet egy alkalmazáshoz felhasználói felületet 
+  fejleszteni egy webes alkalmazáshoz. Ez a tanmenetnek nem része, nem lesz vizsgán sem, de érdemes 
+  tudni róla, hogyan is működik ez. És nem mellékesen meglehetősen izgalmas is volt látni ennek a menetét.
+- A konzultáció második felében az erre a hétre kötelező JPA tananyaghoz kapcsolódó kérdéseket 
+  beszéltünk meg közösen:
+  
+  * Mitől függ, hogy mikor kell az `@ElementCollection` és mikor a kapcsolatokhoz tartozó annotációkat használni 
+    egy `Collection` típusú attribútumon?
+  * A többi kérdés mind a kapcsolatok témakörhöz tartozott (owner és inverse, cascade, annotációk, illetve hogyan 
+    kezeli a JPA, ha a kapcsolat egyik vagy másik oldalán szeretnék lementeni egy új elemet).
