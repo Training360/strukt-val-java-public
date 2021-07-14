@@ -541,8 +541,8 @@ le lehessen kérdezni az ügytípusokat, melyek kódok, és hozzá tartozó ért
 Pl.: 001 - Adóbevallás, 002 - Befizetés, stb. Ezeket egy `NavService`
 listájában tárold el (két attribútummal rendelkező objektumok)!
 
-Írjátok meg a controller részét az időpontfoglalásnak! A következő adatokat várja
-(command, ellenőrzésekkel):
+Írjátok meg a controller részét az időpontfoglalásnak! Az `/api/appointments/` címen legyen elérhető. 
+A következő adatokat várja (command, ellenőrzésekkel):
 
 * adószám (CDV ellenőrzés: pontosan tíz számjegyet tartalmaz. Fogni kell az első kilenc számjegyet,
 és megszorozni rendre 1, 2, ..., 9 számmal. Az eredményt kell összegezni,
