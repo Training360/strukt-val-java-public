@@ -565,6 +565,7 @@ elválasztva.)
 - István ezen a konzultáción megmutatta, hogyan lehet egy alkalmazáshoz felhasználói felületet 
   fejleszteni egy webes alkalmazáshoz. Ez a tanmenetnek nem része, nem lesz vizsgán sem, de érdemes 
   tudni róla, hogyan is működik ez. És nem mellékesen meglehetősen izgalmas is volt látni ennek a menetét.
+  A projekt megtalálható a `employees-fe` könyvtárban.
 - A konzultáció második felében az erre a hétre kötelező JPA tananyaghoz kapcsolódó kérdéseket 
   beszéltünk meg közösen:
   
