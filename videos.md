@@ -573,3 +573,25 @@ elválasztva.)
     egy `Collection` típusú attribútumon?
   * A többi kérdés mind a kapcsolatok témakörhöz tartozott (owner és inverse, cascade, annotációk, illetve hogyan 
     kezeli a JPA, ha a kapcsolat egyik vagy másik oldalán szeretnék lementeni egy új elemet).
+
+## 2021.07.16. délelőtti konzultáció
+
+- István a megjelent hallgatókkal végigment az eddigi elméleti tananyagon (a tanfolyam elejétől kezdve),
+  ismétlő kérdések formájában.
+
+## 2021.07.16. délutáni konzultáció
+
+- A konzultáció elején közös interaktív gyakorló teszt volt.
+- Ezután a következő kérdések közös megbeszélése történt:
+    
+    * Kétirányú JPA-s kapcsolat és a Lombok közös használata végtelen ciklust hozhat létre, és ezáltal 
+      `StackOverflowError` keletkezhet. Mi ennek az oka és hogyan lehet ezt kivédeni? 
+    * Flyway létrehozása.
+    * A JPA által generált SQL utasítások kiírása fájlba.
+    * Ne használjuk a description szóra a `desc` rövidítést, ha SQL-utasítás is van a történetben, 
+      mert az egy SQL-ben lefoglalt kulcsszó.
+    * Hogyan lehet egy validátort implementáló osztály `isValid()` metódusát unit tesztelni?
+    
+- A konzultáció második felében István magyarázattal együtt végigvezette a keddi konzultáción feladott 
+  validációs házi feladat kétféle lehetséges megoldását. Ezalatt alkalom nyílt az időközben felmerülő kérdések 
+  megbeszélésére is.
