@@ -595,3 +595,33 @@ elválasztva.)
 - A konzultáció második felében István magyarázattal együtt végigvezette a keddi konzultáción feladott 
   validációs házi feladat kétféle lehetséges megoldását. Ezalatt alkalom nyílt az időközben felmerülő kérdések 
   megbeszélésére is.
+
+## 2021.07.19.
+
+- A konzultációt István tartotta, a következő kérdések és témák kerültek megbeszélésre: 
+  
+* A múlt heti validációs feladat kapcsán: Hogyan kell megadni a HTTP kérés body-ját, ha objektum 
+  is szerepel az attribútumok között? Pontosan milyen lépései vannak a validációnak a háttérben? 
+  Milyen kivételek keletkezhetnek?
+* Milyen adatbázisok léteznek? Ezek közül melyiket használjuk?
+* Hogyan lehet az adatbázist használni? Hogyan lehet Docker konténerben futtatva használni?
+* Mi a szerepe id generálás esetén annak a táblának, amelyet a JPA implementáció hoz létre 
+  másodikként az adattábla mellett (pl. `hibernate_sequence` nevű tábla)?
+* Hogyan lehet olyan id-t generálni, amelyik az egész világon egyedi?
+* A CRUD műveletek közül melyiknél kell tranzakciókezelést használni és mikor nem? (Ismétlés: 
+  Mi az a tranzakció? A tranzakció azt jelenti, hogy úgy kell egyszerre több műveletet végrehajtani, 
+  hogy azoknak mindenféleképpen együtt kell megtörténniük, nem lehet olyan, hogy csak az egyik 
+  hajtódik végre, a másik pedig nem.)
+* Ha senior kollégától kérdez az ember, akkor mindenképpen forráskóddal és konkrét hibajelenséggel 
+  kell odamenni hozzá, mert így a kérdést azonnal pontosítani lehet és sok időt lehet megtakarítani.
+* Mi az a "persistence context" és hogyan működik?
+* Mi van akkor, ha fennáll a veszélye, hogy ugyanazt az entitást ugyanabban az időpillanatban két 
+  különböző felhasználó egyszerre akarja módosítani? Mi az az "optimistic locking" és mi 
+  a "pessimistic locking"?
+  
+- A konzultáció második részében István egy demo projekten bemutatta, hogyan használható a H2 adatbázis, és
+  hogyan lehet követni azt, hogy mi történik eközben a háttérben, hogyan lehet egy H2 klienssel 
+  hozzáférni ehhez az adatbázishoz. Ezután pedig még azt is, hogy hogyan lehet átállítani az 
+  alkalmazást egy másik adatbázis (pl. MariaDB) használatára.
+- Végül egy egyéni hallgatói kérdés következett, amely azzal volt kapcsolatos, hogy egy `JOIN`-t 
+  tartalmazó lekérdezésnek mindenképpen tartalmaznia kell a `DISTINCT` kulcsszót is a `SELECT` után.
