@@ -217,3 +217,105 @@ annotáció legyen, rá kell tenni ezt az annotációt, amelynek paraméterül m
 * `@ConfigurationProperties` - Ezt az annotációt egy olyan osztályra tesszük, melynek attribútumait konfigurációból töltjük fel.
 * `@EnableConfigurationProperties()` - Az előző annotációval ellátott konfigurációs osztályra kell ezzel az annotációval hivatkozni,
 ekkor példányosítja a Spring, az `application.properties`-ben szereplő értékekkel feltöltve.
+
+# JPA annotációk
+
+* `@Entity` - Ahhoz, hogy egy osztályt a JPA entitásként tudjon értelmezni, kötelezően el
+  kell látni ezzel az annotációval.
+* `@Id` - Az `@Entity` annotációval ellátott entitásnak kötelezően rendelkeznie kell egy
+  egyedi azonosítóval. Ez egy vagy több attribútumot jelent, amely ezzel az annotációval van ellátva.
+* `@Table()` - A JPA képes arra, hogy az entitást legenerálja egy adatbázis táblába.
+  Alapértelmezés szerint a tábla neve meg fog egyezni az osztály nevével, de ha az osztályra
+  rátesszük ezt az annotációt, akkor itt paraméterként bármilyen egyedi nevet is megadhatunk az
+  osztály alapján generálódó adatbázis táblának.
+* `@Column()` - A JPA képes arra, hogy az entitást legenerálja egy adatbázis táblába.
+  Alapértelmezés szerint az oszlopok nevei meg fognak egyezni az attribútumok neveivel, de ha
+  bármelyik attribútumra (akár többre is külön-külön) rátesszük ezt az annotációt, akkor itt
+  paraméterként bármilyen egyedi nevet is megadhatunk az osztály alapján generálódó adatbázis
+  tábla bármely oszlopának.
+* `@GeneratedValue` - Lehetőség van arra is, hogy az azonosítót ne mi adjuk meg, hanem az
+  adatbázis generálja számunkra. Ennek az annotációnak kell paraméterül megadni, hogy milyen
+  típusú stratégiával történjen ez meg. Ezt az annotációt az egyedi azonosítót (`id`-t)
+  tartalmazó attribútumra kell rátenni.
+* `@Access()` - Ha az entitásainkat annotációkkal külön konfigurálni akarjuk, akkor az annotációkat
+  rá lehet tenni attribútumokra (_field access_), getter metódusokra (_property access_), valamint
+  lehet használni _mixed access_-t is, vagyis több mindenre is rátehető az annotáció. Ez utóbbi
+  nem javasolt, de ha valamiért mindenképpen erre van szükségünk, akkor ezt a JPA Providernek
+  jeleznünk kell a megfelelő attribútumra vagy getter metódusra tett `@Access()` annotációval,
+  paraméterként átadva az általunk használni kívánt módot.
+* `@Enumerated()` - Felsorolásos típus (enum) mentésekor a JPA alapértelmezetten az `ordinal()`
+  metódus által visszaadott értéket menti le a táblába. Ha ezt felül szeretnénk deklarálni, akkor
+  használhatjuk ezt az annotációt, átadva neki az `EnumType.STRING` paramétert, és így az enum `name()`
+  metódusa által visszaadott érték fog a táblába lementésre kerülni.
+* `@Lob` - Ha nagy méretű karakteres vagy bináris típusú, vagy bármilyen szerializálható objektumot
+  akarunk lementeni az adatbázisba.
+* `@Temporal` - Ezzel az annotációval megadhatjuk, hogy a `java.util.Date` vagy a `java.util.Calendar`
+  típusú adat mely részét szeretnénk eltárolni.
+* `@Transient` - Ezzel az annotációval megjelölt attribútumot nem menti le a JPA Provider.
+* `@TableGenerator` - Ha explicit módon szeretnénk megadni azt, hogy az azonosítógenerálás
+  platformfüggetlen legyen és mindenképpen egyedi azonosítók kerüljenek kiadásra, akkor a
+  `@GeneratedValue` annotációt kell használnunk, azonban paraméternek meg kell adnunk a `generator`
+  attribútum értékét, amely a tábla neve lesz. Ebben az esetben gyakorlatilag létrejön egy tábla,
+  amely az eddig kiosztott azonosítókat tartalmazza. Ezt a táblát is személyre tudjuk szabni
+  a `@TableGenerator` annotáció segítségével.
+* `SequenceGenerator` - Az azonosítókat kiadó szekvencia tulajdonságait tudjuk megadni.
+* `@IdClass` - Ha egy entitás egyedi azonosítója több attribútumból áll össze, akkor ezt megtehetjük
+  úgy, hogy az entitáson belül több attribútumot adunk meg (mindegyiket az `@Id` annotációval ellátva),
+  és emellett létrehozunk egy segédosztályt, amely ezen attribútumok mindegyikét tartalmazza. A külön
+  létrehozott segédosztályt ekkor az entitásra tett `@IdClass` annotációnak adjuk át paraméterül.
+* `@EmbeddedId` és `@Embeddable` - Ha egy entitás egyedi azonosítója több attribútumból áll össze, akkor
+  ezt megtehetjük úgy, hogy létrehozunk egy segédosztályt, amely ezen attribútumok mindegyikét tartalmazza,
+  és erre az osztályra az `@Embeddable` annotációt tesszük rá. Majd az entitáson belül egyetlen attribútumot
+  hozunk létre, melynek típusa az előbb létrehozott segédosztály, és erre az `@EmbeddedId` annotációt tesszük.
+* `@ElementCollection` - Ezt az annotációt kell rátenni egy entitás `Collection` típusú attribútumára ahhoz,
+  hogy adatbázisba (külön táblába) tudja a JPA azt menteni.
+* `@CollectionTable` - Egy entitás `Collection` típusú attribútuma esetén ezzel az annotációval adhatunk az
+  attribútumot tartalmazó külön tábla nevét és annak az oszlopnak a nevét, amely külső kulcsként hivatkozik
+  az őt tartalmazó entitás egyedi azonosítójára.
+* `@AttributeOverride` - Az `@ElementCollection` esetén az `@Embeddable` annotációval ellátott típust tartalmazó kollekció esetén a
+  különböző attribútumokat tartalmazó oszlopokat ezen annotáció használatával konfigurálhatjuk.
+* `@MapKeyColumn` - Egy `Map` típusú kollekció adatbázisba mentése esetén a kulcsot tartalmazó oszlop nevét
+  ennek az annotációnak adhatjuk meg, az értéket tartalmazó oszlop nevét pedig itt is a `@Column` annotációnak.
+* `@JoinColumn` - Egy külső kulcs nevének személyre szabásához.
+* `@OrderBy` - Ha egy entitáshoz kapcsolódó másik entitások sorrendje fontos (mert például egy listában szeretnénk
+  tárolni őket), akkor ezzel az annotációval lehet megadni, hogy melyik attribútumuk alapján legyenek sorrendbe
+  állítva.
+* `@OrderColumn` - Ha egy entitáshoz kapcsolódó másik entitások sorrendje fontos (mert például egy listában szeretnénk
+  tárolni őket), akkor fel lehet venni egy új attribútumot az adott entitásban, ezzel az annotációval ellátva. Ennek
+  az új attribútumnak csak annyi lesz a feladata, hogy a sorrendet eltárolja.
+* `@NamedQuery` - Ezt az annotációt az entitásra kell rátenni. Egy, az adott entitásra vonatkozó lekérdezést
+  definiálhatunk vele.
+
+Entitásokban deklarált kapcsolati attribútumokon használandó annotációk:
+
+* `@OneToOne` - Egy-egy kapcsolatok esetén. Ha egyirányú kapcsolatról van szó, akkor elegendő
+  magának az annotációnak a használata. Kétirányú kapcsolat esetén el kell látni az annotációt
+  az egyik oldalon egy `mappedBy` attribútummal, és ennek tartalmaznia kell a másik oldalon
+  szereplő, visszamutató attribútumnak a nevét.
+* `@OneToMany` és `@ManyToOne` - Kétirányú egy-több kapcsolat esetén az első entitásban deklarált
+  `Collection` típusú kapcsolati attribútumra a `@OneToMany` annotációt kell tenni. A másik oldalon
+  (a második entitásban) pedig fel kell venni egy első entitás típusú attribútumot, amelyre a
+  `@ManyToOne` annotációt kell rátenni. Ahhoz, hogy a JPA össze tudja kötni, hogy ez ugyanannak a
+  kapcsolatnak a két iránya, a `@OneToMany` annotációnak meg kell adni a `mappedBy` attribútumot,
+  és ennek értékül be kell állítani a másik entitásban lévő attribútum nevét.
+
+Entitásokban deklarált metódusokon használható annotációk:
+
+* `@PrePersist` - Az ezzel az annotációval ellátott metódus az adatbázisba mentés előtt fut le.
+* `@PostPersist` - Az ezzel az annotációval ellátott metódus az adatbázisba mentés után fut le.
+* `@PreRemove` - Az ezzel az annotációval ellátott metódus a törlés előtt fut le.
+* `@PostRemove` - Az ezzel az annotációval ellátott metódus a törlés után fut le.
+* `@PreUpdate` - Az ezzel az annotációval ellátott metódus a módosítás előtt fut le.
+* `@PostUpdate` - Az ezzel az annotációval ellátott metódus a módosítás után fut le.
+* `@PostLoad` - Az ezzel az annotációval ellátott metódus az entitás betöltése után fut le.
+
+Entity graph deklarálása annotációkkal: Az entitás osztályra tett `@NamedEntityGraph` annotációval
+lehet megadni a nevét, majd ezen belül a `@NamedAttributeNode` annotációval megmondjuk azt, hogy
+ennek milyen (kollekció) attribútuma van, és a `@NamedSubgraph` annotációval pedig, hogy ezenkívül
+szeretnénk betölteni még az ezekhez kapcsolódó további entitásokat is.
+
+Deklaratív tranzakciókezelés Spring Framework és Spring Boot használatakor:
+
+* `@EnableTransactionManagement` - Ahhoz, hogy mi tudjuk konfigurálni a tranzakciókezelést,  ezt az annotációt
+  kell használni a Spring Bootos alkalmazáson.
+* `@Transactional` - A metódus, amire ezt az annotációt rátesszük, tranzakcióban fog lefutni.
