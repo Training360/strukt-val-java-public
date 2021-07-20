@@ -627,7 +627,17 @@ elválasztva.)
   tartalmazó lekérdezésnek mindenképpen tartalmaznia kell a `DISTINCT` kulcsszót is a `SELECT` után.
   
 ## 2021.07.20.
+
+- A konzultációt István tartotta, a következő kérdések és témák kerültek megbeszélésre:
+
+* Milyen módszerekkel, eszközökkel lehet olyan konténert kezelni, amelyben egy adatbázis fut?
+* A régebbi videós tananyagban miért nem `IT` az integrációs tesztek nevének végződése, és
+  ez miért nem jó így?
+* A mostani tanfolyamon miért használjuk egyelőre összevissza a controlleer, service, repository rétegeket,
+  miért hiányzik mindig valamelyik a három közül?
   
+- Ezután egy önálló feladatmegoldásra került sor, amelynek szövege a következő:
+
 JPA-val implementáld a következő interfészt!
 
 Használjatok Lombokot! Írjatok integrációs teszteket!
@@ -663,3 +673,8 @@ public class MeetingRoom {
 
 }
 ```
+
+- A konzultáció második felében István magyarázattal együtt végigvezette a feladat megoldását. 
+  Ezalatt alkalom nyílt az időközben felmerülő kérdések megbeszélésére is.
+- A konzultáció végén István megmutatta azt is, milyen egyszerűen lehet Spring Bootos parancssoros 
+  alkalmazást létrehozni.
