@@ -630,10 +630,10 @@ elválasztva.)
 
 - A konzultációt István tartotta, a következő kérdések és témák kerültek megbeszélésre:
 
-* Milyen módszerekkel, eszközökkel lehet olyan konténert kezelni, amelyben egy adatbázis fut?
+* Milyen módszerekkel lehet integrációs teszt során elindítani az adatbázist.
 * A régebbi videós tananyagban miért nem `IT` az integrációs tesztek nevének végződése, és
   ez miért nem jó így?
-* A mostani tanfolyamon miért használjuk egyelőre összevissza a controlleer, service, repository rétegeket,
+* A mostani tanfolyamon miért használjuk egyelőre összevissza a controller, service, repository rétegeket,
   miért hiányzik mindig valamelyik a három közül?
   
 - Ezután egy önálló feladatmegoldásra került sor, amelynek szövege a következő:
@@ -677,4 +677,4 @@ public class MeetingRoom {
 - A konzultáció második felében István magyarázattal együtt végigvezette a feladat megoldását. 
   Ezalatt alkalom nyílt az időközben felmerülő kérdések megbeszélésére is.
 - A konzultáció végén István megmutatta azt is, milyen egyszerűen lehet Spring Bootos parancssoros 
-  alkalmazást létrehozni.
+  alkalmazást létrehozni, és használni a Spring Data JPA-t.
