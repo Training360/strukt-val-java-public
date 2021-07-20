@@ -626,28 +626,28 @@ elválasztva.)
 - Végül egy egyéni hallgatói kérdés következett, amely azzal volt kapcsolatos, hogy egy `JOIN`-t 
   tartalmazó lekérdezésnek mindenképpen tartalmaznia kell a `DISTINCT` kulcsszót is a `SELECT` után.
   
-  ## 2021.07.20.
+## 2021.07.20.
   
-  JPA-val implementáld a következő interfészt!
-  
-  Használjatok Lombokot! Írjatok integrációs teszteket!
-  
-  ```java
-  public interface MeetingRoomsRepository {
+JPA-val implementáld a következő interfészt!
 
-    MeetingRoom save(String name, int width, int length);
+Használjatok Lombokot! Írjatok integrációs teszteket!
 
-    List<String> getMeetingroomsOrderedByName();
+```java
+public interface MeetingRoomsRepository {
 
-    List<String> getEverySecondMeetingRoom();
+  MeetingRoom save(String name, int width, int length);
 
-    List<MeetingRoom> getMeetingRooms();
+  List<String> getMeetingroomsOrderedByName();
 
-    List<MeetingRoom> getExactMeetingRoomByName(String name);
+  List<String> getEverySecondMeetingRoom();
 
-    List<MeetingRoom> getMeetingRoomsByPrefix(String nameOrPrefix);
+  List<MeetingRoom> getMeetingRooms();
 
-    void deleteAll();
+  List<MeetingRoom> getExactMeetingRoomByName(String name);
+
+  List<MeetingRoom> getMeetingRoomsByPrefix(String nameOrPrefix);
+
+  void deleteAll();
 }
 ```
 
@@ -660,5 +660,6 @@ public class MeetingRoom {
     private String name;
     private int width;
     private int length;
+
 }
 ```
