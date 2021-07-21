@@ -678,3 +678,24 @@ public class MeetingRoom {
   Ezalatt alkalom nyílt az időközben felmerülő kérdések megbeszélésére is.
 - A konzultáció végén István megmutatta azt is, milyen egyszerűen lehet Spring Bootos parancssoros 
   alkalmazást létrehozni, és használni a Spring Data JPA-t.
+
+## 2021.07.21.
+
+- A konzultáción először a Slack-en feltett kérdések és témák kerültek sorra:
+
+* A webszerverek és a kliensek kapcsolatteremtése a portokon keresztül.
+* Saját Java webszerver író vállalkozáshoz szükséges kezdeti indulási feltételek.
+* Technikai kérdések a tanfolyam zárásával, a vizsgával és a beadandó 
+  vizsgaremekkel kapcsolatban.
+* Hogyan lehet egy alkalmazást Docker konténerben úgy indítani, hogy ne kelljen minden 
+  egyes alkalommal megadni minden környezeti változót?
+* Hogyan lehet tesztelni, hogy jó-e, amit a dockerben csinált az ember?
+* Az "Alkalmazás futtatása Dockerben MariaDB-vel - gyakorlat"-ban Docker networkkel 
+  kapcsoljuk össze a saját konténerünket az adatbázis konténerrel. Hogy működik ez a 
+  network?
+* Mi, mit, milyen porton keresztül ér el?
+* A `@GeneratedValue(strategy = GenerationType.TABLE)` definiálási struktúránál az így létrejövő 
+  tábla használható-e más entitások id generálására is?
+* Az adatbázisban az id-re nem szabad semmilyen logikát építeni, sem semmilyen módon támaszkodni rá. SOHA!
+* Sorfolytonos azonosító használata.
+* A JPA gyakorlati feladatok közül a Lekérdezések és a Haladó lekérdezések feladatok közös megbeszélése.
