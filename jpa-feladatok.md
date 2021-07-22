@@ -1,15 +1,18 @@
 # JPA
 
 * [ ] Egyszerű mentés JPA-val
-* [ ] Egyszerű mentés JPA-val - gyakorlat
 * [ ] További egyszerű műveletek JPA-val
-* [ ] További egyszerű műveletek JPA-val - gyakorlat
 * [ ] Architektúra és integrációs tesztelés
 * [ ] Entitások konfigurálása
-* [ ] Elsődleges kulcs
+* [ ] Azonosítógenerálás
 * [ ] Entitások életciklusa
 * [ ] Többértékű attribútumok
 * [ ] Kapcsolatok
+* [ ] Több-több kapcsolatok
+* [ ] Entitások mapekben
+* [ ] Beágyazott objektumok és másodlagos tábla
+* [ ] Öröklődés
 * [ ] Lekérdezések
 * [ ] Haladó lekérdezések
-* [ ] Deklaratív tranzakciókezelés
+* [ ] Bulk műveletek
+* [ ] JPA Spring Boottal
