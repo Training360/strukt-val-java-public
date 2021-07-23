@@ -698,3 +698,26 @@ public class MeetingRoom {
 * Az adatbázisban az id-re nem szabad semmilyen logikát építeni, sem semmilyen módon támaszkodni rá. SOHA!
 * Hogyan lehet akkor mégis sorfolytonos azonosítót kiosztani.
 * A JPA gyakorlati feladatok közül a Lekérdezések és a Haladó lekérdezések feladatok közös megbeszélése.
+
+## 2021.07.23. délelőtti konzultáció
+
+- István a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (JPA),
+  ismétlő kérdések formájában.
+
+## 2021.07.23. délutáni konzultáció
+
+- A konzultáción a következő kérdések közös megbeszélése történt:
+
+* Mi a különbség a `CascadeType.REMOVE` és az orphan remove beállítások között?
+* Entity Graph: mi ez és mire használjuk?
+* Van-e valamilyen annotáció sorrendezésre, amelyet osztályra lehet tenni, és 
+  amiről a JPA mindig tudja, hogy ez alapján rakja sorrendbe ezt az entitást?
+* Hogyan működik Spring Data JPA-ban a persistence context? Hogyan kerül bele egy 
+  entitás és meddig marad benne?
+* Mi értelme a read only tranzakciónak?
+* Ki lehet-e szervezni az update műveletet egy másik metódusba?
+* Miért nem szabad soha két `join fetch` utasítást egy `SELECT`-en belül kiadni?
+* SOHA, DE SOHA nem szabad az id-ra semmiféle logikát építeni! SOHA! Hogyan érdemes 
+  tehát megírni az integrációs teszteseteket?
+* Egyéni problémák kapcsán került szóba, hogy milyen jogosultságú felhasználó 
+  mit tud csinálni az adatbázisban?
