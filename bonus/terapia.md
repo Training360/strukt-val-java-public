@@ -1,8 +1,5 @@
 ## Terápiás foglalkozás szervező
 
-Írd meg az alkalmazás hiányzó részeit (tedd ki a szükséges annotációkat, vedd fel a szükséges változókat és függőségeket, írd meg a hiányzó metódusokat, stb.)!  
-Használd a kapott kódrészleteket (controller, domain és dto osztályok)!
-
 ### Domain objektumok
 
 #### Terápiás foglalkozás
