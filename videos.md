@@ -721,3 +721,33 @@ public class MeetingRoom {
   tehát megírni az integrációs teszteseteket?
 * Egyéni problémák kapcsán került szóba, hogy milyen jogosultságú felhasználó 
   mit tud csinálni az adatbázisban?
+
+## 2021.07.26.
+
+- A konzultációt Kristóf tartotta. Először kisebb egyéni kérdések kerültek megválaszolásra:
+  
+* A JPA Lekérdezések című leckében miért `JOIN` és nem `join fetch` van a JPQL lekérdezésben?
+* Visszaadjuk vagy ne adjuk vissza a DTO objektum id-ját egy új adat létrehozásakor?
+* MariaDB futtatása Docker konténerben, sokadjára. A számítógépen foglalt portok számát a `netstat -a` 
+  paranccsal lehet megtudni. Ha csak egy konkrét portra kíváncsi valaki, akkor azt a következő paranccsal 
+  lehet lekérdezni: `netstat -a |find "3306"` Mi a teendő, ha a kívánt port foglalt?
+  
+- Ezután egy rövid feladatot kaptunk gyakorlásra, amelynek szövege a következő:
+
+Ebben a feladatban filmeket kell tárolni adatbázisban, Spring Data JPA segítségével.
+
+Legyen egy `Movie` entitás. Minden filmnek legyen egy egyedi azonosítója (`id`, ehhez legyen megadva 
+a generálási stratégia), egy címe (`title`) és értékelései (`ratings`, amely egy `ElementCollection`). 
+Legyen a `Movie` osztálynak egy `addRating()` metódusa, amely adjon hozzá egy új értékelést az értékelések 
+listájához. Ha még nem érkezett értékelés a filmre, akkor példányosítsa is le először a listát.
+
+A controller osztály alapértelmezetten a `/api/movies` URL-en legyen elérhető. Lehessen benne lekérni a 
+filmeket (ez egyszerű listázást jelent), valamint lehessen létrehozni is új filmet, ehhez csupán a címét 
+kelljen megadni a request body-ban. Az `/{id}/rating` URL-en keresztül lehessen értékelést adni a megadott 
+id-jú filmre. A második és a harmadik metódus DTO-t adjon vissza.
+
+Az adatbázisban természetesen két külön táblában kell, hogy megjelenjenek a filmek (`movies` tábla) és a 
+kapcsolódó értékelések (`movie_ratings` tábla, ebben az egyik oszlop külső kulccsal hivatkozik a 
+filmek id-jára). 
+
+Adatbázisnak Docker konténerben  elindított MariaDB-t használj!
