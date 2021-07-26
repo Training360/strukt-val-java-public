@@ -751,3 +751,5 @@ kapcsolódó értékelések (`movie_ratings` tábla, ebben az egyik oszlop küls
 filmek id-jára). 
 
 Adatbázisnak Docker konténerben  elindított MariaDB-t használj!
+
+- A konzultáció végén Kristóf végigvezette a feladat megoldását.
