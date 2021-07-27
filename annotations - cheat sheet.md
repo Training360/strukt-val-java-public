@@ -218,7 +218,7 @@ annotáció legyen, rá kell tenni ezt az annotációt, amelynek paraméterül m
 * `@EnableConfigurationProperties()` - Az előző annotációval ellátott konfigurációs osztályra kell ezzel az annotációval hivatkozni,
 ekkor példányosítja a Spring, az `application.properties`-ben szereplő értékekkel feltöltve.
 
-# JPA annotációk
+## JPA annotációk
 
 * `@Entity` - Ahhoz, hogy egy osztályt a JPA entitásként tudjon értelmezni, kötelezően el
   kell látni ezzel az annotációval.
