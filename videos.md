@@ -721,3 +721,76 @@ public class MeetingRoom {
   tehát megírni az integrációs teszteseteket?
 * Egyéni problémák kapcsán került szóba, hogy milyen jogosultságú felhasználó 
   mit tud csinálni az adatbázisban?
+
+## 2021.07.26.
+
+- A konzultációt Kristóf tartotta. Először kisebb egyéni kérdések kerültek megválaszolásra:
+  
+* A JPA Lekérdezések című leckében miért `JOIN` és nem `join fetch` van a JPQL lekérdezésben?
+* Visszaadjuk vagy ne adjuk vissza a DTO objektum id-ját egy új adat létrehozásakor?
+* MariaDB futtatása Docker konténerben, sokadjára. A számítógépen foglalt portok számát a `netstat -a` 
+  paranccsal lehet megtudni. Ha csak egy konkrét portra kíváncsi valaki, akkor azt a következő paranccsal 
+  lehet lekérdezni: `netstat -a |find "3306"` Mi a teendő, ha a kívánt port foglalt?
+  
+- Ezután egy rövid feladatot kaptunk gyakorlásra, amelynek szövege a következő:
+
+Ebben a feladatban filmeket kell tárolni adatbázisban, Spring Data JPA segítségével.
+
+Legyen egy `Movie` entitás. Minden filmnek legyen egy egyedi azonosítója (`id`, ehhez legyen megadva 
+a generálási stratégia), egy címe (`title`) és értékelései (`ratings`, amely egy `ElementCollection`). 
+Legyen a `Movie` osztálynak egy `addRating()` metódusa, amely adjon hozzá egy új értékelést az értékelések 
+listájához. Ha még nem érkezett értékelés a filmre, akkor példányosítsa is le először a listát.
+
+A controller osztály alapértelmezetten a `/api/movies` URL-en legyen elérhető. Lehessen benne lekérni a 
+filmeket (ez egyszerű listázást jelent), valamint lehessen létrehozni is új filmet, ehhez csupán a címét 
+kelljen megadni a request body-ban. Az `/{id}/rating` URL-en keresztül lehessen értékelést adni a megadott 
+id-jú filmre. A második és a harmadik metódus DTO-t adjon vissza.
+
+Az adatbázisban természetesen két külön táblában kell, hogy megjelenjenek a filmek (`movies` tábla) és a 
+kapcsolódó értékelések (`movie_ratings` tábla, ebben az egyik oszlop külső kulccsal hivatkozik a 
+filmek id-jára). 
+
+Adatbázisnak Docker konténerben  elindított MariaDB-t használj!
+
+- A konzultáció végén Kristóf végigvezette a feladat megoldását.
+
+## 2021.07.27.
+
+- A konzultációt Kristóf tartotta, az elején néhány rövidebb témakör került megválaszolásra:
+
+* Mi legyen a `pom.xml` tartalma?
+* Adatbázis létrehozása, inicializálása általánosságban áttekintve.
+
+- Ezután egy feladatot kaptunk, a leendő projektfeladatra való gyakorlás céljából. Ennek szövege a 
+  következő:
+
+```
+# Feladat
+
+A feladatban szerzőket és általuk írt könyveket kell tárolunk.
+
+Entitások:
+
+* `Author` (id, név, könyvek listája)
+
+* `Book` (id, ISBN szám, cím, szerző)
+
+Mint látható, a két entitás között kétirányú egy-több kapcsolat van. A könyvek táblájában a szerző id-ja külső kulcsként kell hogy szerepeljen.
+
+`Author`-t létre lehet hozni könyv nélkül, könyvet hozzárendelni add metódussal lehet, de figyeljünk hogy a könyv szerzőjét állítsuk be.
+
+Az repository réteget az `AuthorRepository` reprezentálja, míg az üzleti logikát az `AuthorService`-ben valósítjuk meg.
+
+Az `AuthorController` alapértelmezetten a `/api/authors` végponton hallgatózik.
+
+* Lehessen a szerzőket lekérdezni, ekkor jelenjenek meg az összes könyvükkel együtt.
+
+* Lehessen szerzőt létrehozni, ekkor csak a szerző nevét várjuk
+
+* Lehessen szerzőhöz könyvet hozzáadni a `/{id}/books` végponton. Ekkor a könyv ISBN számát és címét várjuk
+
+* Lehessen szerzőt törölni. Ekkor figyeljünk arra, hogy a hozzá tartozó könyvek is törlődjenek. A törlés id alapján a 
+  `/api/authors/{id}` végponton történjen.
+```
+
+- A konzultáció végén Kristóf végigvezette a feladat megoldását.
