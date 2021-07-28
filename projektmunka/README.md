@@ -1,130 +1,130 @@
-# Struktúraváltó résztvevõk haladását nyomonkövetõ alkalmazás
+# StruktÃºravÃ¡ltÃ³ rÃ©sztvevÅ‘k haladÃ¡sÃ¡t nyomonkÃ¶vetÅ‘ alkalmazÃ¡s
 
-## Vízió
+## VÃ­ziÃ³
 
-A projektmunkát egy valós igény keltette életre. A Struktúraváltó
-projekt során a résztvevõk elõrehaladásának ellenõrzése, tárolása,
-lekérdezése, áttekintése elég körülményes, különbözõ rendszerekben
-történik.
+A projektmunkÃ¡t egy valÃ³s igÃ©ny keltette Ã©letre. A StruktÃºravÃ¡ltÃ³
+projekt sorÃ¡n a rÃ©sztvevÅ‘k elÅ‘rehaladÃ¡sÃ¡nak ellenÅ‘rzÃ©se, tÃ¡rolÃ¡sa,
+lekÃ©rdezÃ©se, Ã¡ttekintÃ©se elÃ©g kÃ¶rÃ¼lmÃ©nyes, kÃ¼lÃ¶nbÃ¶zÅ‘ rendszerekben
+tÃ¶rtÃ©nik.
 
-A projektmunka eredményét fel fogjuk használni a következõ
-évfolyamoknál, tehát egy valós szoftvert fogunk
-megvalósítani. Az egyéni ötletek megvalósítására is van lehetõség
-a megadottakon felül. A legjobbakat összeválogatjuk, és egy
-projektbe másoljuk.
+A projektmunka eredmÃ©nyÃ©t fel fogjuk hasznÃ¡lni a kÃ¶vetkezÅ‘
+Ã©vfolyamoknÃ¡l, tehÃ¡t egy valÃ³s szoftvert fogunk
+megvalÃ³sÃ­tani. Az egyÃ©ni Ã¶tletek megvalÃ³sÃ­tÃ¡sÃ¡ra is van lehetÅ‘sÃ©g
+a megadottakon felÃ¼l. A legjobbakat Ã¶sszevÃ¡logatjuk, Ã©s egy
+projektbe mÃ¡soljuk.
 
-Amennyiben a kötelezõ részt megcsináltad, a továbbiakról egyeztessünk,
-mert még több részlet ki van dolgozva!
+Amennyiben a kÃ¶telezÅ‘ rÃ©szt megcsinÃ¡ltad, a tovÃ¡bbiakrÃ³l egyeztessÃ¼nk,
+mert mÃ©g tÃ¶bb rÃ©szlet ki van dolgozva!
 
 Projekt neve legyen `mentor-tools`!
 
 ## Sprint 1
 
-### Funkcionális követelmények
+### FunkcionÃ¡lis kÃ¶vetelmÃ©nyek
 
-A következõket kell karbantartani:
+A kÃ¶vetkezÅ‘ket kell karbantartani:
 
-* Évfolyamokat (`TrainingClass`)
-* Résztvevõket (`Student`), egy résztvevõ akár több évfolyamon is szerepelhet
+* Ã‰vfolyamokat (`TrainingClass`)
+* RÃ©sztvevÅ‘ket (`Student`), egy rÃ©sztvevÅ‘ akÃ¡r tÃ¶bb Ã©vfolyamon is szerepelhet
 * Tanmeneteket (`Syllabus`)
-* A tanmenetekhez modulok (`Module`), ahhoz leckék (`Lesson`) tartoznak
-* A tanmenetet évfolyamhoz lehet rendelni
-* Be lehessen jelölni, hogy melyik résztvevõ melyik leckét dolgozta fel: megnézte a videót, és elkészítette a
+* A tanmenetekhez modulok (`Module`), ahhoz leckÃ©k (`Lesson`) tartoznak
+* A tanmenetet Ã©vfolyamhoz lehet rendelni
+* Be lehessen jelÃ¶lni, hogy melyik rÃ©sztvevÅ‘ melyik leckÃ©t dolgozta fel: megnÃ©zte a videÃ³t, Ã©s elkÃ©szÃ­tette a
   gyakorlati feladatot
 
-A különbözõ adatokat kell nyilvántartani:
+A kÃ¼lÃ¶nbÃ¶zÅ‘ adatokat kell nyilvÃ¡ntartani:
 
-#### Évfolyam
+#### Ã‰vfolyam
 
-* Elnevezés (nem üres, max. 255 karakter)
-* Kezdés dátuma (tetszõleges)
-* Befejezés dátuma (tetszõleges, késõbb legyen, mint a kezdés)
+* ElnevezÃ©s (nem Ã¼res, max. 255 karakter)
+* KezdÃ©s dÃ¡tuma (tetszÅ‘leges)
+* BefejezÃ©s dÃ¡tuma (tetszÅ‘leges, kÃ©sÅ‘bb legyen, mint a kezdÃ©s)
 
-Lehet listázni, lekérdezni, létrehozni, mindhárom attribútumot módosítani, törölni.
+Lehet listÃ¡zni, lekÃ©rdezni, lÃ©trehozni, mindhÃ¡rom attribÃºtumot mÃ³dosÃ­tani, tÃ¶rÃ¶lni.
 
-#### Résztvevõk
+#### RÃ©sztvevÅ‘k
 
-* Név (nem üres, max. 255 karakter)
-* E-mail cím (nem üres, max. 255 karakter)
-* GitHub felhasználónév (nem üres, max. 255 karakter)
-* Megjegyzés
+* NÃ©v (nem Ã¼res, max. 255 karakter)
+* E-mail cÃ­m (nem Ã¼res, max. 255 karakter)
+* GitHub felhasznÃ¡lÃ³nÃ©v (nem Ã¼res, max. 255 karakter)
+* MegjegyzÃ©s
 
-#### Évfolyam - résztvevõ kapcsolat
+#### Ã‰vfolyam - rÃ©sztvevÅ‘ kapcsolat
 
-Egy résztvevõ be tud iratkozni egy tanfolyamra. Ezt a beiratkozás
-osztály/tábla tartalmazza (`registration`).
+Egy rÃ©sztvevÅ‘ be tud iratkozni egy tanfolyamra. Ezt a beiratkozÃ¡s
+osztÃ¡ly/tÃ¡bla tartalmazza (`registration`).
 
-A beiratkozásnak vannak státuszai: aktív (`ACTIVE`), kilépés alatt (`EXIT_IN_PROGRESS`), kilépett (`EXITED`).
-Hiszen egy résztvevõ egy évfolyamon lehet aktív, míg egy másikon kilépett.
+A beiratkozÃ¡snak vannak stÃ¡tuszai: aktÃ­v (`ACTIVE`), kilÃ©pÃ©s alatt (`EXIT_IN_PROGRESS`), kilÃ©pett (`EXITED`).
+Hiszen egy rÃ©sztvevÅ‘ egy Ã©vfolyamon lehet aktÃ­v, mÃ­g egy mÃ¡sikon kilÃ©pett.
 
-Beiratkozás történhet a `/trainingclasses/{id}/registrations` címen. Meg kell adni a résztvevõ azonosítóját.
-Itt le lehet kérdezni az évfolyamra beiratkozottakat (a résztvevõkrõl csak az id-ját, nevét és státuszát adja vissza).
+BeiratkozÃ¡s tÃ¶rtÃ©nhet a `/trainingclasses/{id}/registrations` cÃ­men. Meg kell adni a rÃ©sztvevÅ‘ azonosÃ­tÃ³jÃ¡t.
+Itt le lehet kÃ©rdezni az Ã©vfolyamra beiratkozottakat (a rÃ©sztvevÅ‘krÅ‘l csak az id-jÃ¡t, nevÃ©t Ã©s stÃ¡tuszÃ¡t adja vissza).
 
-Egy résztvevõ beiratkozásait is le lehet kérdezni a `/students/{id}/registrations` címen. 
-Csak az évfolyamok id-ját és nevét adja vissza.
+Egy rÃ©sztvevÅ‘ beiratkozÃ¡sait is le lehet kÃ©rdezni a `/students/{id}/registrations` cÃ­men. 
+Csak az Ã©vfolyamok id-jÃ¡t Ã©s nevÃ©t adja vissza.
 
 #### Tanmenet
 
-* Név (nem üres, max. 255 karakter)
+* NÃ©v (nem Ã¼res, max. 255 karakter)
 
-Egy tanmenet több évfolyamhoz is tartozhat, egy évfolyamhoz egy tanmenet!
+Egy tanmenet tÃ¶bb Ã©vfolyamhoz is tartozhat, egy Ã©vfolyamhoz egy tanmenet!
 
-Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
+Lehet listÃ¡zni, lekÃ©rdezni, lÃ©trehozni, minden adatot mÃ³dosÃ­tani, tÃ¶rÃ¶lni.
 
 #### Modul
 
-* Cím (nem üres, max. 255 karakter)
-* URL (nem üres, max. 255 karakter)
+* CÃ­m (nem Ã¼res, max. 255 karakter)
+* URL (nem Ã¼res, max. 255 karakter)
 
-Egy tanmenethez több modul is tartozhat.
+Egy tanmenethez tÃ¶bb modul is tartozhat.
 
-Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
+Lehet listÃ¡zni, lekÃ©rdezni, lÃ©trehozni, minden adatot mÃ³dosÃ­tani, tÃ¶rÃ¶lni.
 
 #### Lecke
 
-* Cím (nem üres, max. 255 karakter)
-* URL (nem üres, max. 255 karakter)
+* CÃ­m (nem Ã¼res, max. 255 karakter)
+* URL (nem Ã¼res, max. 255 karakter)
 
-Egy modulhoz több lecke is tartozhat.
+Egy modulhoz tÃ¶bb lecke is tartozhat.
 
-Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
+Lehet listÃ¡zni, lekÃ©rdezni, lÃ©trehozni, minden adatot mÃ³dosÃ­tani, tÃ¶rÃ¶lni.
 
-#### Lecke elvégzése
+#### Lecke elvÃ©gzÃ©se
 
-* Melyik résztvevõ
-* Melyik leckét
-* Videót, gyakorlati feladatot, vagy mindkettõt
+* Melyik rÃ©sztvevÅ‘
+* Melyik leckÃ©t
+* VideÃ³t, gyakorlati feladatot, vagy mindkettÅ‘t
 
-Szintén egy kapcsoló entitásra van szükség, ami hivatkozik egy résztvevõre és egy leckére (`LessonCompletion`). 
+SzintÃ©n egy kapcsolÃ³ entitÃ¡sra van szÃ¼ksÃ©g, ami hivatkozik egy rÃ©sztvevÅ‘re Ã©s egy leckÃ©re (`LessonCompletion`). 
 Valamint az adatai: 
 
-* Videót megnézte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
-* Gyakorlati feladatot elvégezte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
-* Elvégzésének dátuma
-* Commit URL-je (lehet üres, max. 255 karakter)
+* VideÃ³t megnÃ©zte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
+* Gyakorlati feladatot elvÃ©gezte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
+* ElvÃ©gzÃ©sÃ©nek dÃ¡tuma
+* Commit URL-je (lehet Ã¼res, max. 255 karakter)
 
-Elérhetõ a `/students/{id}/lessioncompletition` címen.
+ElÃ©rhetÅ‘ a `/students/{id}/lessioncompletition` cÃ­men.
 
-Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani (kivéve a résztvevõt), törölni.
+Lehet listÃ¡zni, lekÃ©rdezni, lÃ©trehozni, minden adatot mÃ³dosÃ­tani (kivÃ©ve a rÃ©sztvevÅ‘t), tÃ¶rÃ¶lni.
 
-### Nem-funkcionális követelmények
+### Nem-funkcionÃ¡lis kÃ¶vetelmÃ©nyek
 
-Klasszikus háromrétegû alkalmazás, MariaDB adatbázissal,
-Java Spring backenddel, REST webszolgáltatásokkal.
+Klasszikus hÃ¡romrÃ©tegÅ± alkalmazÃ¡s, MariaDB adatbÃ¡zissal,
+Java Spring backenddel, REST webszolgÃ¡ltatÃ¡sokkal.
 
-Követelmények tételesen:
+KÃ¶vetelmÃ©nyek tÃ©telesen:
 
-* SQL adatbázis kezelõ réteg megvalósítása Spring Data JPA-val (`Repository`)
-* Flyway - a scriptek a funkciókkal együtt készüljenek, szóval ahogy bekerül az entitás, úgy kerüljön be egy
-  plusz script is, ami a táblát létrehozza
-* Üzleti logika réteg megvalósítása `@Service` osztályokkal
-* Integrációs tesztek megléte (elég TestRestTemplate tesztek), legalább 80%-os tesztlefedettség
-* Controller réteg megvalósítása, RESTful API implementálására. Az API végpontoknak a `/api` címen kell elérhetõeknek lenniük.
-* Hibakezelés, validáció
-* Swagger felület
-* HTTP fájl a teszteléshez
+* SQL adatbÃ¡zis kezelÅ‘ rÃ©teg megvalÃ³sÃ­tÃ¡sa Spring Data JPA-val (`Repository`)
+* Flyway - a scriptek a funkciÃ³kkal egyÃ¼tt kÃ©szÃ¼ljenek, szÃ³val ahogy bekerÃ¼l az entitÃ¡s, Ãºgy kerÃ¼ljÃ¶n be egy
+  plusz script is, ami a tÃ¡blÃ¡t lÃ©trehozza
+* Ãœzleti logika rÃ©teg megvalÃ³sÃ­tÃ¡sa `@Service` osztÃ¡lyokkal
+* IntegrÃ¡ciÃ³s tesztek meglÃ©te (elÃ©g TestRestTemplate tesztek), legalÃ¡bb 80%-os tesztlefedettsÃ©g
+* Controller rÃ©teg megvalÃ³sÃ­tÃ¡sa, RESTful API implementÃ¡lÃ¡sÃ¡ra. Az API vÃ©gpontoknak a `/api` cÃ­men kell elÃ©rhetÅ‘eknek lenniÃ¼k.
+* HibakezelÃ©s, validÃ¡ciÃ³
+* Swagger felÃ¼let
+* HTTP fÃ¡jl a tesztelÃ©shez
 * Dockerfile
-* GitHub Classroomban kell a megoldást beadni
-* Commitolni legalább entitásonként, és hozzá tartozó REST végpontonként
+* GitHub Classroomban kell a megoldÃ¡st beadni
+* Commitolni legalÃ¡bb entitÃ¡sonkÃ©nt, Ã©s hozzÃ¡ tartozÃ³ REST vÃ©gpontonkÃ©nt
 
 Cheat sheet: https://github.com/Training360/strukt-val-java-public/blob/master/annotations%20-%20cheat%20sheet.md
