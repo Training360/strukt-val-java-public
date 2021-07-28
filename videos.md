@@ -794,3 +794,32 @@ Az `AuthorController` alapértelmezetten a `/api/authors` végponton hallgatózi
 ```
 
 - A konzultáció végén Kristóf végigvezette a feladat megoldását.
+
+## 2021.07.28.
+
+A konzultáció első részében technikai témák kerültek napirendre:
+
+* Projektmunka. Határidő: 2021. augusztus 6. Nagyon-nagyon végső határidő: augusztus 9. (de jobb, ha senki 
+  nem halasztja eddigre). A kiírás megtalálható a következő linken: [Projektmunka](https://github.com/Training360/strukt-val-java-public/tree/master/projektmunka) 
+  A feladatot új repository-ban kell beadni, melynek neve `mentor-tools` legyen.
+  FONTOS: A commitolás kis lépésekben történjen, és minden kis lépés után működjön az alkalmazás, lefussanak a tesztek. 
+* Vizsgaremek. Ez KÖTELEZŐ, a képesítővizsga része. Határidő: 2021. augusztus 6. A kiírás megtalálható 
+  a következő linken: [Vizsgaremek](https://github.com/Training360/strukt-val-java-public/tree/master/vizsgaremek) 
+  Egy publikus GitHub repository-ban kell beadni, amelynek a neve szabadon választható.
+  
+Ezt követően a következő témákat és kérdéseket fejtette ki István bővebben:
+
+* Swagger használata. Mivel a tanfolyam programkövetelményeiben benne van, ezért kötelező tananyaggá vált. A videók ezen a 
+  linken találhatóak: [Elméleti videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549801-swagger-ui) és 
+  [Gyakorlati videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269284-swagger-ui-gyakorlat)
+  A használatához a `springdoc-openapi-ui` függőséget kell felvenni a `pom.xml`-be, és ezután a [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 
+  URL-en elérhető a grafikus felülete. 
+* Mire való a HTTPS? Hogyan lehet megcsinálni, hogy az alkalmazás ilyen URL-en legyen elérhető? A használata éles alkalmazás 
+  esetén nem javasolt és nem is jellemző, de a témában ajánlott cikkek: [https://www.jtechlog.hu/2011/02/05/elektronikus-alairas-es-alkalmazasa.html](https://www.jtechlog.hu/2011/02/05/elektronikus-alairas-es-alkalmazasa.html) 
+  és [https://www.baeldung.com/spring-boot-https-self-signed-certificate](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
+* Hogyan lehet elrejteni az adatbázis eléréseket, ha egyébként a GitHub-on, publikusan van fent az alkalmazás?
+* Mire jó a Docker? Mire nem jó a Docker?
+* Két ajánlott videó: [IDEA újdonságok](https://www.youtube.com/watch?v=RBhz-8fZN9A) 
+  és [Docker, mint Developer Experience](https://www.youtube.com/watch?v=zEPLU1Ltk7U)
+* Hova érdemes tenni a Bean Validation annotációkat?
+  
