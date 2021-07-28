@@ -124,7 +124,7 @@ Követelmények tételesen:
 * Swagger felület
 * HTTP fájl a teszteléshez
 * Dockerfile
-* GitHub Classroomban kell a megoldást beadni
+* Új repository-ba kell dolgozni, melynek címe `mentor-tools`
 * Commitolni legalább entitásonként, és hozzá tartozó REST végpontonként
 
 Cheat sheet: https://github.com/Training360/strukt-val-java-public/blob/master/annotations%20-%20cheat%20sheet.md
