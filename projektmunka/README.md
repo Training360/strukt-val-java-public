@@ -16,7 +16,8 @@ projektbe másoljuk.
 Amennyiben a kötelező részt megcsináltad, a továbbiakról egyeztessünk,
 mert még több részlet ki van dolgozva!
 
-Projekt neve legyen `mentor-tools`!
+Projekt neve legyen `mentor-tools`! Az adatbázis neve, felhasználó, 
+jelszó lehet `mentortools`.
 
 ## Sprint 1
 
@@ -63,6 +64,8 @@ Itt le lehet kérdezni az évfolyamra beiratkozottakat (a résztvevőkről csak 
 Egy résztvevő beiratkozásait is le lehet kérdezni a `/students/{id}/registrations` címen. 
 Csak az évfolyamok id-ját és nevét adja vissza.
 
+Az évfolyam és a résztvevő között nincs közvetlen kapcsolat.
+
 #### Tanmenet
 
 * Név (nem üres, max. 255 karakter)
@@ -71,23 +74,34 @@ Egy tanmenet több évfolyamhoz is tartozhat, egy évfolyamhoz egy tanmenet!
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 
+A tanmenetet a `/trainingclasses/{id}/syllabus` címen lehet az
+évfolyamhoz rendelni.
+Amikor létrehozod az évfolyamot, a hozzá tartozó tanmenet még üres.
+Ezen a címen lehet POST-tal felvenni, a megfelelő tanmenet id-jának
+beküldésével. Módosítani lehet PUT-tal, ekkor másik tanmenetet lehet
+hozzá rendelni.
+
 #### Modul
 
 * Cím (nem üres, max. 255 karakter)
 * URL (nem üres, max. 255 karakter)
 
-Egy tanmenethez több modul is tartozhat.
+Egy tanmenethez több modul is tartozhat. Egy modul több tanmenethez is
+tartozhat. Ne mutasson vissza a modul a tanmenetre.
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
+A `/modules` címen adminisztrálható.
 
 #### Lecke
 
 * Cím (nem üres, max. 255 karakter)
 * URL (nem üres, max. 255 karakter)
 
-Egy modulhoz több lecke is tartozhat.
+Egy modulhoz több lecke is tartozhat. A lecke visszahivatkozhat a modulra.
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
+
+A `/modules/{id}/lessons` címen adminisztrálható.
 
 #### Lecke elvégzése
 
