@@ -50,6 +50,9 @@ Lehet listázni, lekérdezni, létrehozni, mindhárom attribútumot módosítani
 * GitHub felhasználónév (nem üres, max. 255 karakter)
 * Megjegyzés
 
+A résztvevőket is lehet felvenni, lekérdezni, listázni, módosítani és törölni 
+az `/api/students` végponton.
+
 #### Évfolyam - résztvevő kapcsolat
 
 Egy résztvevő be tud iratkozni egy tanfolyamra. Ezt a beiratkozás
