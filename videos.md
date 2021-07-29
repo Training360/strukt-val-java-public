@@ -106,7 +106,7 @@ references employees (id) ON DELETE CASCADE ON UPDATE RESTRICT)
 - Ezután a hallgatókat párba osztotta és adott egy feladatot, amin mindezt élesben is ki
   lehetett próbálni. A feladat maga direkt nem volt nehéz, mert a lényeg most nem ez volt,
   hanem az, hogy a közös munkát mindenki meg tudja tapasztalni.
-- A feladat szövege: Készítsd el a `Movie` osztályt a kövtkező
+- A feladat szövege: Készítsd el a `Movie` osztályt a következő
   adattagokkal: + `name (String)` + `length (int)` + `releaseDate (LocalDate)`  
   Legyen az osztályban egy konstruktor ami beállítja az adattagokat illetve a gettereket,
   settereket. Készítsd el a `MovieService` osztályt melyben van egy filmeket tartalmazó
@@ -471,8 +471,8 @@ Ne felejts el unit és integrációs tesztet írni!
 ## 2021.07.05.
 
 - Könyvtárnév, project, repository elnevezések. Monolit alkalmazás kontra microservice.
-- Hogyan ellenőrizzük a feladatmegoldásokat. Hogyan commitoljunk. Hány repo hozható létre? Repo pinelése GitHubon.
-- Mi a különbség a `findFirst()` és a `findAny()` között
+- Hogyan ellenőrizzük a feladatmegoldásokat? Hogyan commitoljunk? Hány repo hozható létre? Repo pinelése GitHubon.
+- Mi a különbség a `findFirst()` és a `findAny()` között?
 - Lehet-e stream bejárás közben az eredeti kollekciót módosítani?
 - RFC 7807-ben mi az a `type` URI?
 - ModelMappert mockoljunk-e? Szerintem ne.
@@ -562,7 +562,7 @@ elválasztva.)
 
 ## 2021.07.14.
 
-- István ezen a konzultáción megmutatta, hogyan lehet egy alkalmazáshoz felhasználói felületet 
+- István ezen a konzultáción megmutatta, hogyan lehet felhasználói felületet 
   fejleszteni egy webes alkalmazáshoz. Ez a tanmenetnek nem része, nem lesz vizsgán sem, de érdemes 
   tudni róla, hogyan is működik ez. És nem mellékesen meglehetősen izgalmas is volt látni ennek a menetét.
   A projekt megtalálható a `employees-fe` könyvtárban.
