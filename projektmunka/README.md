@@ -47,7 +47,7 @@ Lehet listázni, lekérdezni, létrehozni, mindhárom attribútumot módosítani
 
 * Név (nem üres, max. 255 karakter)
 * E-mail cím (nem üres, max. 255 karakter)
-* GitHub felhasználónév (nem üres, max. 255 karakter)
+* GitHub felhasználónév (nem kötelező, max. 255 karakter)
 * Megjegyzés
 
 A résztvevőket is lehet felvenni, lekérdezni, listázni, módosítani és törölni 
