@@ -77,7 +77,7 @@ Egy tanmenet több évfolyamhoz is tartozhat, egy évfolyamhoz egy tanmenet!
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 
-A tanmenetet a `/trainingclasses/{id}/syllabus` címen lehet az
+A tanmenetet a `/trainingclasses/{id}/syllabuses` címen lehet az
 évfolyamhoz rendelni.
 Amikor létrehozod az évfolyamot, a hozzá tartozó tanmenet még üres.
 Ezen a címen lehet POST-tal felvenni, a megfelelő tanmenet id-jának
@@ -94,6 +94,9 @@ tartozhat. Ne mutasson vissza a modul a tanmenetre.
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 A `/modules` címen adminisztrálható.
+
+A modult a tanmenethez a `/trainingclasses/{id}/syllabuses/modules`
+címen lehessen hozzáadni.
 
 #### Lecke
 
@@ -117,7 +120,8 @@ Valamint az adatai:
 
 * Videót megnézte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
 * Gyakorlati feladatot elvégezte-e (nem `boolean`, hanem enum: `COMPLETED`, `NOT_COMPLETED`)
-* Elvégzésének dátuma
+* Videó elvégzésének dátuma
+* Gyakorlat elvégzésének dátuma
 * Commit URL-je (lehet üres, max. 255 karakter)
 
 Elérhető a `/students/{id}/lessioncompletition` címen.
