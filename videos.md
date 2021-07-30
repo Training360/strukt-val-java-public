@@ -822,4 +822,19 @@ Ezt követően a következő témákat és kérdéseket fejtette ki István bőv
 * Két ajánlott videó: [IDEA újdonságok](https://www.youtube.com/watch?v=RBhz-8fZN9A) 
   és [Docker, mint Developer Experience](https://www.youtube.com/watch?v=zEPLU1Ltk7U)
 * Hova érdemes tenni a Bean Validation annotációkat?
-  
+
+## 2021.07.30. délelőtti konzultáció
+
+- Kristóf a megjelent hallgatókkal végigment az előző heti elméleti tananyagon (Spring Data JPA),
+  ismétlő kérdések formájában.
+
+## 2021.07.30. délutáni konzultáció
+
+- A konzultáció elején két kérdés került megbeszélésre:
+
+* Ha lista helyett `Set`-et használunk, akkor hozzáadásnál `StackOverflowError`-ba lehet belefutni. Ez 
+  az attribútumra tett `@EqualsAndHashCode.Exclude` annotációval védhető ki.
+* Saját lekérdezés implementálása a repository interfészben.
+
+- Ezután közös interaktív gyakorló teszt következett, amelynek témája az egész tanfolyam anyaga volt.
+- A konzultáció utolsó fél órájában egyéni problémák megbeszélése történt.

@@ -232,7 +232,9 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   Alapértelmezés szerint az oszlopok nevei meg fognak egyezni az attribútumok neveivel, de ha
   bármelyik attribútumra (akár többre is külön-külön) rátesszük ezt az annotációt, akkor itt
   paraméterként bármilyen egyedi nevet is megadhatunk az osztály alapján generálódó adatbázis
-  tábla bármely oszlopának.
+  tábla bármely oszlopának. Amennyiben egy entitást több különböző táblába akarunk elmenteni, 
+  akkor a `@Column` annotáció `table` attribútumának megadható a másodlagos
+  tábla neve. Ekkor a JPA ezt az attribútumot a megadott másodlagos táblába fogja elmenteni.
 * `@GeneratedValue` - Lehetőség van arra is, hogy az azonosítót ne mi adjuk meg, hanem az
   adatbázis generálja számunkra. Ennek az annotációnak kell paraméterül megadni, hogy milyen
   típusú stratégiával történjen ez meg. Ezt az annotációt az egyedi azonosítót (`id`-t)
@@ -267,6 +269,11 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   ezt megtehetjük úgy, hogy létrehozunk egy segédosztályt, amely ezen attribútumok mindegyikét tartalmazza,
   és erre az osztályra az `@Embeddable` annotációt tesszük rá. Majd az entitáson belül egyetlen attribútumot
   hozunk létre, melynek típusa az előbb létrehozott segédosztály, és erre az `@EmbeddedId` annotációt tesszük.
+* `@Embeddable` és `@Embedded` - A beágyazott objektumokat akkor használjuk, amikor egy entitás esetén
+  szeretnénk az attribútumok egy csoportját újra felhasználni, kiszervezni egy másik osztályba. Ebben az
+  esetben azt az osztályt, ami az attribútumok egy csoportját tartalmazza, el kell látni az `@Embeddable`
+  (azaz: beágyazható) annotációval. A beágyazás helyén, tehát ahol deklarálunk egy ilyen típusú attribútumot,
+  ott azt el kell látni az `@Embedded` annotációval.  
 * `@ElementCollection` - Ezt az annotációt kell rátenni egy entitás `Collection` típusú attribútumára ahhoz,
   hogy adatbázisba (külön táblába) tudja a JPA azt menteni.
 * `@CollectionTable` - Egy entitás `Collection` típusú attribútuma esetén ezzel az annotációval adhatunk az
@@ -285,6 +292,21 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   az új attribútumnak csak annyi lesz a feladata, hogy a sorrendet eltárolja.
 * `@NamedQuery` - Ezt az annotációt az entitásra kell rátenni. Egy, az adott entitásra vonatkozó lekérdezést
   definiálhatunk vele.
+* `@ManyToMany` - Több-több kapcsolat esetén tesszük a (többértékű) kapcsolati attribútumra.
+* `@JoinTable` - Több-több kapcsolat esetén a kapcsolótábla személyre szabásához tesszük a (többértékű)
+  kapcsolati attribútumra.
+* `@MapKey` - Ezt az annotációt `Map` típusú attribútumra tehetjük. Azt lehet neki megadni, hogy amennyiben
+  az értékek objektumok, mely attribútumuk szerepeljen kulcsként.
+* `@SecondaryTable` - Osztályra tehető. Abban az esetben használjuk, ha egy entitást több
+  különböző táblába akarunk elmenteni. Ennek megadhatjuk a tábla és a külső kulcs nevét. A külső kulcsnál a
+  `@PrimaryKeyJoinColumn` annotációt kell használni.
+* `@MappedSuperclass` - Abban az esetben, ha a Java nyelvben úgy akarjuk használni az öröklődést, hogy
+  kiemelünk egy külön osztályba attribútumokat, ezek az attribútumok utána az öröklődés miatt természetesen
+  szerepelni fognak az összes leszármazottban, azonban nem akarunk olyan lekérdezést végezni, amely ennek az
+  osztálynak az összes leszármazottját visszaadja. Erre az osztályra a `@MappedSuperclass` annotációt kell tenni.
+* `@Inheritance` - Azt lehet vele megadni, hogy a JPA milyen módon mentse el az adatbázisba
+  az egymással öröklődési kapcsolatban lévő entitásokat. Az öröklődési hierarchia tetején álló osztályra kell
+  tenni.  
 
 Entitásokban deklarált kapcsolati attribútumokon használandó annotációk:
 
