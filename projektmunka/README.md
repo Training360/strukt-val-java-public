@@ -77,6 +77,8 @@ Egy tanmenet több évfolyamhoz is tartozhat, egy évfolyamhoz egy tanmenet!
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 
+Mindezt a `/syllabusses` címen.
+
 A tanmenetet a `/trainingclasses/{id}/syllabuses` címen lehet az
 évfolyamhoz rendelni.
 Amikor létrehozod az évfolyamot, a hozzá tartozó tanmenet még üres.
@@ -95,7 +97,7 @@ tartozhat. Ne mutasson vissza a modul a tanmenetre.
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 A `/modules` címen adminisztrálható.
 
-A modult a tanmenethez a `/trainingclasses/{id}/syllabuses/modules`
+A modult a tanmenethez a `/syllabuses/{id}/modules`
 címen lehessen hozzáadni.
 
 #### Lecke
