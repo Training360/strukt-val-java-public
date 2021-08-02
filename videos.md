@@ -838,3 +838,14 @@ Ezt követően a következő témákat és kérdéseket fejtette ki István bőv
 
 - Ezután közös interaktív gyakorló teszt következett, amelynek témája az egész tanfolyam anyaga volt.
 - A konzultáció utolsó fél órájában egyéni problémák megbeszélése történt.
+
+## 2021.08.02.
+
+- Continuous Integration, Continuous Delivery Jenkins-szel. Sőt, Continuous Deployment (éles környezetre telepítés). 
+  Mi az a Jenkins, hogyan működik és hogyan szokás használni?
+- Hogyan ellenőrzi a kódminőséget a SonarQube? Mi köze ennek a saját fejlesztőeszközben futó SonarLinthez?
+- Hogyan kerül ki egy valós Java alkalmazás az internetre? Virtuális számítógép vásárlása és arra Docker telepítése. 
+  Saját alkalmazásból buildelt image feltöltése a DockerHubra. Saját alkalmazás futtatása a virtuális számítógépen Docker 
+  konténerben.
+- Az időközben felmerült kérdések megbeszélése.
+- Egyéni hallgatói kérdések megbeszélése.
