@@ -10,4 +10,13 @@ public class MusicstoreApplication {
         SpringApplication.run(MusicstoreApplication.class, args);
     }
 
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    };
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper().findAndRegisterModules();
+    }
 }

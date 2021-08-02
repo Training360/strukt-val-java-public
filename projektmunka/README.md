@@ -77,7 +77,7 @@ Egy tanmenet több évfolyamhoz is tartozhat, egy évfolyamhoz egy tanmenet!
 
 Lehet listázni, lekérdezni, létrehozni, minden adatot módosítani, törölni.
 
-Mindezt a `/syllabusses` címen.
+Mindezt a `/syllabuses` címen.
 
 A tanmenetet a `/trainingclasses/{id}/syllabuses` címen lehet az
 évfolyamhoz rendelni.
@@ -151,4 +151,4 @@ Követelmények tételesen:
 * Új repository-ba kell dolgozni, melynek címe `mentor-tools`
 * Commitolni legalább entitásonként, és hozzá tartozó REST végpontonként
 
-Cheat sheet: https://github.com/Training360/strukt-val-java-public/blob/master/annotations%20-%20cheat%20sheet.md
+Cheat sheet: https://github.com/kovacseni/strukt-val-java-public/blob/master/annotations-cheat_sheet.md
