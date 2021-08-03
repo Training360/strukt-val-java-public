@@ -34,7 +34,7 @@ Követelmények tételesen:
 * Új repository-ba kell dolgozni, melynek címe szabadon választható.
 * Commitolni legalább entitásonként, és hozzá tartozó REST végpontonként
 
-Cheat sheet: https://github.com/kovacseni/strukt-val-java-public/blob/master/annotations-cheat_sheet.md
+Cheat sheet: https://github.com/Training360/strukt-val-java-public/blob/master/annotations-cheat_sheet.md
 
 ## Vizsgaremek témaötletek
 

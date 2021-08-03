@@ -260,7 +260,7 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   attribútum értékét, amely a tábla neve lesz. Ebben az esetben gyakorlatilag létrejön egy tábla,
   amely az eddig kiosztott azonosítókat tartalmazza. Ezt a táblát is személyre tudjuk szabni
   a `@TableGenerator` annotáció segítségével.
-* `SequenceGenerator` - Az azonosítókat kiadó szekvencia tulajdonságait tudjuk megadni.
+* `@SequenceGenerator` - Az azonosítókat kiadó szekvencia tulajdonságait tudjuk megadni.
 * `@IdClass` - Ha egy entitás egyedi azonosítója több attribútumból áll össze, akkor ezt megtehetjük
   úgy, hogy az entitáson belül több attribútumot adunk meg (mindegyiket az `@Id` annotációval ellátva),
   és emellett létrehozunk egy segédosztályt, amely ezen attribútumok mindegyikét tartalmazza. A külön
