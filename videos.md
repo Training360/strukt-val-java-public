@@ -900,3 +900,29 @@ Kapcsolatok:
   mégis listám? Hol példányosítódik a lista?
 * Projektmunka/Vizsgaremek kapcsán egyéni, debugolás-jellegű kérdés.
 * Projektmunka/Vizsgaremek kapcsán még egy egyéni, debugolás-jellegű kérdés.
+
+## 2021.08.04.
+
+- A vizsgaremek védés gyakorláshoz (és természetesen a majdani éles védéshez is) néhány hasznos tanács, praktika.
+- Vizsgaremek kapcsán egyéni hallgatói kérdés.
+- DTO osztályokban minden hivatkozott entitás legyen DTO. Embedded osztályok is.
+- `@JsonBackReference` használata.
+- Identification variable használata a következő módon: `select e from Employee e join fetch e.addresses a where a.id=4`
+- Kell-e egyszerre Swagger felület és HTTP fájl is a vizsgaremekhez?  
+- `Dockerfile`
+- Lesz-e Docker használat a vizsgán?
+- Vizsgaremek kapcsán egyéni hallgatói kérdés.
+- A vizsgával kapcsolatban a következők hangzottak el:
+
+* A vizsgának és a vizsgaremeknek ugyanaz a követelménye.
+* Viszont kapunk teszteket.
+* Új Springes projektet kapunk, http fájlokkal, új saját repo-ba kell rakni a GitHubon.
+* Kapunk feladatleírást.
+* Csak entitásokat, controllereket, service-eket és rerpository-kat kell írnunk.
+* 2 entitás, 1-n kapcsolatban, 6-7 funkció, mind a 4 CRUD művelet.
+* Lehet, hogy kell egyszerű JPQL lekérdezést írni.
+* `Dockerfile`-t kell még létrehozni.
+
+- Még volt egy egyéni kérdés `Dockerfile`-ből való image gyártás sikertelensége kapcsán.
+- Egyéni hallgatói kérdés `Error creating Bean` témakörben.
+- Egyéni hallgatói kérdés Flyway témakörben.
