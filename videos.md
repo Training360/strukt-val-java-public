@@ -849,3 +849,80 @@ Ezt követően a következő témákat és kérdéseket fejtette ki István bőv
   konténerben.
 - Az időközben felmerült kérdések megbeszélése.
 - Egyéni hallgatói kérdések megbeszélése.
+
+## 2021.08.03.
+
+- Kristóf kiosztott egy opcionális házi feladatot, melyet a pénteki (08.06.) konzultáción fogunk megbeszélni. 
+  A szövege a következő:
+
+```
+# Movies-Actors-Studios
+
+## Model
+Három entitásunk a Színész a Film és a Stúdió. A színészeknek van nevük, és születési dátumuk, a filmeknek címük és kiadási évük,
+a stúdióknak nevük. (Természetesen minden entitás rendelkezik egyedi azonosítóval.)
+
+Kapcsolatok: 
+* Egy színész több filmben is szerepelhet és egy film is több szinészt tartalmazhat. 
+* Egy film egy stúdióhoz tartozik, de egy stúdióhoz több film is tartozhat.
+
+## Lekérdezések
+
+* Kérdezzük le azokat filmeket, amelyekben a paraméterül átadott nevű színész szerepel!
+
+* Kérdezzük le azokat a színészeket, akik egy bizonyos év után születtek!
+
+* Kérdezzük le azokat a színészeket akik több filmben is szerepelnek!
+
+* Kérdezzük le azokat a stúdiókat melyek legalább 2 filmmel büszkélkedhetnek!
+
+* Kérdezzük le azokat a színészeket, akik egy paraméterül átadott filmben szerepelnek!
+
+* Kérdezzük le azokat a filmeket amik egy paraméterül átadott stúdióban készültek egy paraméterül átadott évben!
+
+* Kérdezzük le azokat a stúdiókat, ahol egy paraméterül átadott színész szerepelt legalább egy filmben!
+
+### Bónusz
+* Adjuk vissza azt a stúdiót, ahol egy színész legalább két filmben szerepel! 
+```
+
+- Ezután a Slack-en feltett kérdések és témák kerültek napirendre:
+
+* A kérdés lényege: honnan tudhatom meg a Spring Boot-os alkalmazásom verziószámát?
+  Ide vonatkozó cikk: [https://blog.jdriven.com/2018/10/get-your-application-version-with-spring-boot/](https://blog.jdriven.com/2018/10/get-your-application-version-with-spring-boot/)
+  Ide vonatkozó lecke az e-learning tárból: [https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20593709-git-informaciok-megjelenitese](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20593709-git-informaciok-megjelenitese)
+* Projektmunka/Vizsgaremek kapcsán egyéni, debugolás-jellegű kérdés.
+* Projektmunka/Vizsgaremek kapcsán egyéni kérdés: hogyan érdemes kezelni egy `Person`-höz tartozó `Address`-eket?
+* Projektmunka/Vizsgaremek kapcsán: orphan remove esetén hogyan lehet felvenni az entitást, hogy az ne maradjon árva, 
+  amíg nem rendelek hozzá egy másik entitást?
+* Projektmunka/Vizsgaremek kapcsán: tesztlefedettséget hogyan érdemes mérni? Fel kell-e venni a Jacoco-t a ˙pom.xml`-be?
+* Projektmunka/Vizsgaremek kapcsán egyéni kérdés: ha sehol sem írom le azt, hogy `new ArrayList<>()`, akkor hogyan lesz 
+  mégis listám? Hol példányosítódik a lista?
+* Projektmunka/Vizsgaremek kapcsán egyéni, debugolás-jellegű kérdés.
+* Projektmunka/Vizsgaremek kapcsán még egy egyéni, debugolás-jellegű kérdés.
+
+## 2021.08.04.
+
+- A vizsgaremek védés gyakorláshoz (és természetesen a majdani éles védéshez is) néhány hasznos tanács, praktika.
+- Vizsgaremek kapcsán egyéni hallgatói kérdés.
+- DTO osztályokban minden hivatkozott entitás legyen DTO. Embedded osztályok is.
+- `@JsonBackReference` használata.
+- Identification variable használata a következő módon: `select e from Employee e join fetch e.addresses a where a.id=4`
+- Kell-e egyszerre Swagger felület és HTTP fájl is a vizsgaremekhez?  
+- `Dockerfile`
+- Lesz-e Docker használat a vizsgán?
+- Vizsgaremek kapcsán egyéni hallgatói kérdés.
+- A vizsgával kapcsolatban a következők hangzottak el:
+
+* A vizsgának és a vizsgaremeknek ugyanaz a követelménye.
+* Viszont kapunk teszteket.
+* Új Springes projektet kapunk, http fájlokkal, új saját repo-ba kell rakni a GitHubon.
+* Kapunk feladatleírást.
+* Csak entitásokat, controllereket, service-eket és rerpository-kat kell írnunk.
+* 2 entitás, 1-n kapcsolatban, 6-7 funkció, mind a 4 CRUD művelet.
+* Lehet, hogy kell egyszerű JPQL lekérdezést írni.
+* `Dockerfile`-t kell még létrehozni.
+
+- Még volt egy egyéni kérdés `Dockerfile`-ből való image gyártás sikertelensége kapcsán.
+- Egyéni hallgatói kérdés `Error creating Bean` témakörben.
+- Egyéni hallgatói kérdés Flyway témakörben.
