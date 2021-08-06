@@ -926,3 +926,15 @@ Kapcsolatok:
 - Még volt egy egyéni kérdés `Dockerfile`-ből való image gyártás sikertelensége kapcsán.
 - Egyéni hallgatói kérdés `Error creating Bean` témakörben.
 - Egyéni hallgatói kérdés Flyway témakörben.
+
+## 2021.08.06. délelőtti konzultáció
+
+Kristóf a megjelent hallgatókkal átfogóan végigment az egész elméleti tananyagon, ismétlő kérdések formájában.
+
+## 2021.08.06. délutáni konzultáció
+
+- A kedden kiadott JPQL-lekérdezéses házi feladat megoldásai.
+- 10 perc kötetlen beszélgetés.
+- Közös záró interaktív kvíz.
+- István záró mondatai.
+- Kristóf záró mondatai.
