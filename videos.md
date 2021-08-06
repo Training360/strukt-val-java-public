@@ -937,3 +937,4 @@ Kristóf a megjelent hallgatókkal átfogóan végigment az egész elméleti tan
 - 10 perc kötetlen beszélgetés.
 - Közös záró interaktív kvíz.
 - István záró mondatai.
+- Kristóf záró mondatai.
