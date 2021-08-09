@@ -10,7 +10,7 @@ GroupId: `org.training360`, artifactId: `final-exam`. Csomagnév: `org.training3
 
 Először másold át magadhoz a teszteseteket, majd commitolj azonnal!
 
-A feladatra 3 órád van összesen!
+A feladatra 3,5 órád van összesen!
 
 Ha letelik az idő mindenképp commitolj, akkor is
 ha nem vagy kész!
