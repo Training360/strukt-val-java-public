@@ -6,7 +6,7 @@ Bármely régebbi osztályt megnyithatsz.
 Új repository-ba dolgozz!
 Ezen könyvtár tartalmát nyugodtan át lehet másolni (`pom.xml`, tesztek).
 Projekt, könyvtár, repository neve legyen: `sv2021-jvjbf-zarovizsga`.
-GroupId: `training360`, artifactId: `sv2021-jvjbf-zarovizsga`. Csomagnév: `finalexam`.
+GroupId: `org.training360`, artifactId: `final-exam`. Csomagnév: `org.training360.finalexam`.
 
 Először másold át magadhoz a teszteseteket, majd commitolj azonnal!
 
