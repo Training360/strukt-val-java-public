@@ -88,7 +88,7 @@ public class PlayerControllerRestIT {
     void testCreatePlayerWithInvalidName(){
         Problem result =
                 template.postForObject("/api/players",
-                        new CreateTeamCommand(""),
+                        new CreatePlayerCommand("", LocalDate.now(), PositionType.CENTER_BACK),
                         Problem.class);
 
         assertEquals(Status.BAD_REQUEST,result.getStatus());
