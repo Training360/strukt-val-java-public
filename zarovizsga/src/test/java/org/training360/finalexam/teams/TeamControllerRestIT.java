@@ -1,4 +1,4 @@
-package org.training360.finalexam.players;
+package org.training360.finalexam.teams;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +7,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.jdbc.Sql;
-import org.training360.finalexam.teams.CreateTeamCommand;
-import org.training360.finalexam.teams.TeamDTO;
-import org.training360.finalexam.teams.UpdateWithExistingPlayerCommand;
+import org.training360.finalexam.players.CreatePlayerCommand;
+import org.training360.finalexam.players.PlayerDTO;
+import org.training360.finalexam.players.PositionType;
 import org.zalando.problem.Problem;
 import org.zalando.problem.Status;
 
@@ -71,7 +71,7 @@ public class TeamControllerRestIT {
                         TeamDTO.class);
 
         TeamDTO resultWithPlayer = template.postForObject("/api/teams/{id}/players",
-                new CreatePlayerCommand("John Doe", LocalDate.of(1991,11,10),PositionType.CENTER_BACK),
+                new CreatePlayerCommand("John Doe", LocalDate.of(1991,11,10), PositionType.CENTER_BACK),
                 TeamDTO.class,
                 team.getId());
 
@@ -190,9 +190,10 @@ public class TeamControllerRestIT {
     void testAddPlayerToNotExistingTeam(){
         Long wrongId = 6666L;
 
-       Problem result = template.postForObject("/api/teams/"+wrongId+"/players",
+       Problem result = template.postForObject("/api/teams/{id}/players",
                 new CreatePlayerCommand("John Doe", LocalDate.of(1991,11,10),PositionType.CENTER_BACK),
-                Problem.class);
+                Problem.class,
+                wrongId);
 
        assertEquals(URI.create("teams/not-found"),result.getType());
        assertEquals(Status.NOT_FOUND,result.getStatus());
