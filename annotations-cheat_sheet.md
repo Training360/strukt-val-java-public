@@ -292,7 +292,6 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   az új attribútumnak csak annyi lesz a feladata, hogy a sorrendet eltárolja.
 * `@NamedQuery` - Ezt az annotációt az entitásra kell rátenni. Egy, az adott entitásra vonatkozó lekérdezést
   definiálhatunk vele.
-* `@ManyToMany` - Több-több kapcsolat esetén tesszük a (többértékű) kapcsolati attribútumra.
 * `@JoinTable` - Több-több kapcsolat esetén a kapcsolótábla személyre szabásához tesszük a (többértékű)
   kapcsolati attribútumra.
 * `@MapKey` - Ezt az annotációt `Map` típusú attribútumra tehetjük. Azt lehet neki megadni, hogy amennyiben
@@ -306,7 +305,11 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   osztálynak az összes leszármazottját visszaadja. Erre az osztályra a `@MappedSuperclass` annotációt kell tenni.
 * `@Inheritance` - Azt lehet vele megadni, hogy a JPA milyen módon mentse el az adatbázisba
   az egymással öröklődési kapcsolatban lévő entitásokat. Az öröklődési hierarchia tetején álló osztályra kell
-  tenni.  
+  tenni. 
+* `@JsonBackReference` - Kétirányú kapcsolatok esetén az egymásra hivatkozó DTO-k miatt
+  a HTTP válaszban a JSON szerializálásakor végtelen ciklus jöhet létre, amely `StackOverflowError`-t
+  eredményez. Az annotációt az egyik DTO másikra hivatkozó attribútumára tesszük. Ekkor JSON-né alakításkor 
+  azt az attribútumot figyelmen kívül hagyja a Jackson.  
 
 Entitásokban deklarált kapcsolati attribútumokon használandó annotációk:
 
@@ -320,6 +323,7 @@ Entitásokban deklarált kapcsolati attribútumokon használandó annotációk:
   `@ManyToOne` annotációt kell rátenni. Ahhoz, hogy a JPA össze tudja kötni, hogy ez ugyanannak a
   kapcsolatnak a két iránya, a `@OneToMany` annotációnak meg kell adni a `mappedBy` attribútumot,
   és ennek értékül be kell állítani a másik entitásban lévő attribútum nevét.
+* `@ManyToMany` - Több-több kapcsolat esetén tesszük a (többértékű) kapcsolati attribútumra.  
 
 Entitásokban deklarált metódusokon használható annotációk:
 
