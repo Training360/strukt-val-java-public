@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "birthDate": "1992-11-12",
+  "dateOfBirth": "1992-11-12",
   "position":"RIGHT_FULLBACK"
 }
 

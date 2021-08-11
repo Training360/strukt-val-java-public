@@ -20,7 +20,7 @@ public class PlayerController {
     }
 
     @PostMapping
-    public PlayerDTO createTeam(@RequestBody @Valid CreatePlayerCommand command){
+    public PlayerDTO createPlayer(@RequestBody @Valid CreatePlayerCommand command){
         return playerService.createPlayer(command);
 
     }
