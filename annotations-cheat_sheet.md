@@ -305,11 +305,7 @@ ekkor példányosítja a Spring, az `application.properties`-ben szereplő ért�
   osztálynak az összes leszármazottját visszaadja. Erre az osztályra a `@MappedSuperclass` annotációt kell tenni.
 * `@Inheritance` - Azt lehet vele megadni, hogy a JPA milyen módon mentse el az adatbázisba
   az egymással öröklődési kapcsolatban lévő entitásokat. Az öröklődési hierarchia tetején álló osztályra kell
-  tenni. 
-* `@JsonBackReference` - Kétirányú kapcsolatok esetén az egymásra hivatkozó DTO-k miatt
-  a HTTP válaszban a JSON szerializálásakor végtelen ciklus jöhet létre, amely `StackOverflowError`-t
-  eredményez. Az annotációt az egyik DTO másikra hivatkozó attribútumára tesszük. Ekkor JSON-né alakításkor 
-  azt az attribútumot figyelmen kívül hagyja a Jackson.  
+  tenni.
 
 Entitásokban deklarált kapcsolati attribútumokon használandó annotációk:
 
@@ -345,3 +341,10 @@ Deklaratív tranzakciókezelés Spring Framework és Spring Boot használatakor:
 * `@EnableTransactionManagement` - Ahhoz, hogy mi tudjuk konfigurálni a tranzakciókezelést,  ezt az annotációt
   kell használni a Spring Bootos alkalmazáson.
 * `@Transactional` - A metódus, amire ezt az annotációt rátesszük, tranzakcióban fog lefutni.
+
+## Jackson
+
+* `@JsonBackReference` - Kétirányú kapcsolatok esetén az egymásra hivatkozó DTO-k miatt
+  a HTTP válaszban a JSON szerializálásakor végtelen ciklus jöhet létre, amely `StackOverflowError`-t
+  eredményez. Az annotációt az egyik DTO másikra hivatkozó attribútumára tesszük. Ekkor JSON-né alakításkor
+  azt az attribútumot figyelmen kívül hagyja a Jackson. 
