@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
@@ -18,7 +17,6 @@ public class CreatePlayerCommand {
 
     private LocalDate birthDate;
 
-    @Enumerated
     private PositionType position;
 
 }
