@@ -117,11 +117,11 @@ Teszteset: `WorldRecordSavingIT`
 
 A kérés hatására a következő adatok érkeznek:
 
-- URL-ben: rekorder id (`Long`)
+- URL-ben: világrekord id (`Long`)
   
 JSON-ben:
 
-- világrekord id  (`Long`, nem lehet null)
+- új rekorder id-ja  (`Long`, nem lehet null)
 - új rekord értéke (`Double`, nem lehet null)
 
 A kérésben beérkező adatokat a fenti feltételek alapján validáld le, 
