@@ -164,7 +164,7 @@ Teszteset: `WorldRecordBeatIT`
 
 ## Bizonyos rekorderek listázása (12 pont)
 
-### `GET /api/recorder`
+### `GET /api/recorders`
 
 A kérés hatására az alkalmazás kilistáz bizonyos feltételeknek megfelelő rekordereket, 200-as státuszkóddal.
 
