@@ -1,4 +1,4 @@
-package training360.guinessapp;
+package training360.guinnessapp;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.zalando.problem.Problem;
 import org.zalando.problem.Status;
-import training360.guinessapp.dto.*;
+import training360.guinnessapp.dto.*;
 
 import java.time.LocalDate;
 import java.util.List;
